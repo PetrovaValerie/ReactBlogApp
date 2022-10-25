@@ -6,8 +6,8 @@ import {Navbar} from "./navbar/navbar";
 
 export const HeaderMenu = (): ReactElement => {
     return (
+        <>
             <NavItem>
-
                 <Navbar/>
                 <SearchBar>
                         <input placeholder = "Search.." />
@@ -17,9 +17,11 @@ export const HeaderMenu = (): ReactElement => {
                         </SearchIcon>
 
                 </SearchBar>
+
                 <section>
                     <UserName />
                 </section>
             </NavItem>
+        </>
     )
 };

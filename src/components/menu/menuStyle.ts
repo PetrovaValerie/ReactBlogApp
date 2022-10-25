@@ -7,19 +7,19 @@ export const NavItem = styled.div`
   width: 100%;
   height: 15%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   box-sizing: border-box;
-  section {
-    width: 15%;
-  }
+      section {
+        width: 15%;
+      }
 `
 
 export const SearchBar = styled.div`
-  width: 80%;
+  width: 68.5%;
   display: flex;
       input {
-        padding: 0 30px;
+        padding: 0 10%;
         margin: 0;
         width: 100%;
         min-height: 50px;

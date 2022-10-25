@@ -1,6 +1,6 @@
 import React, {ReactElement, useState} from "react";
 import {BurgerWrapper, StyledBurger} from "./navbarStyle";
-import {LeftNav} from "./leftNav";
+import {WebNav} from "./webNav";
 
 
 export const Burger = (): ReactElement => {
@@ -9,13 +9,14 @@ export const Burger = (): ReactElement => {
 
     return (
         <BurgerWrapper>
+
             <StyledBurger open={open} onClick={() => setOpen(!open)}>
                 <div></div>
                 <div></div>
                 <div></div>
             </StyledBurger>
 
-            <LeftNav open={open}/>
+            <WebNav open={open}/>
 
         </BurgerWrapper>
     )

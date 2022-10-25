@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import {COLORS} from './../../../style';
 
 export const UserNameWrapper = styled.div`
-  width: 200px;
+  width: 15%;
+  min-width: 200px;
   min-height: 50px;
   background-color: ${COLORS.primary};
   border-left: none;
@@ -24,7 +25,8 @@ export const UserNameWrapper = styled.div`
         font-family: 'Inter', sans-serif;
         font-size: 16px;
         font-weight: 600;
-        line-height: 34px;
+        //line-height: 34px;
+        line-height: 20px;
       }
       p {
         padding-right: 10%;
@@ -34,11 +36,17 @@ export const UserNameWrapper = styled.div`
         font-family: 'Inter', sans-serif;
         font-size: 16px;
         font-weight: 600;
-        line-height: 34px;
+        //line-height: 34px;
+        line-height: 18px;
       }
   
-  @media (max-width: 768px) {
+  @media (max-width: 1340px) {
     width: 100px;
+    justify-content: center;
+    p {
+      font-weight: 400;
+      line-height: 16px;
+    }
     span {
     font-size: 10px;
     }

@@ -1,23 +1,35 @@
 import * as React from 'react';
 import styledComponents from 'styled-components';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import './App.css';
 import {HeaderMenu} from "./components/menu";
-import {Index} from "./components/signIn";
-import {TabList} from "./components/tabs";
+import {TabListing} from "./components/tabs";
 // import {CustomInput} from "./components/main/customInput/";
+import {Layout} from '../src/containers/layout/layout';
+import {SignInForm} from "./containers/signInForm";
+import {SignUpForm} from "./containers/signUpForm";
+import {RegConfirm} from "./containers/signUpForm/RegConfirm";
+
+import {PageListing} from "../src/components/pagination"
 
 function App() {
   return (
-      <div className="App">
-        <header className="App-header">
-            <HeaderMenu  />
-        </header>
-
-        <Index />
-        {/*<CustomInput type={'password'} placeholder={'Введите пароль'} />*/}
-        {/*<CustomInput type={'email'} placeholder={'Введите текст'} />*/}
-        <TabList />
-      </div>
+      <BrowserRouter>
+          <div className="App">
+              <Layout>   {/*Layout = то,что неизменно*/}
+                  <Routes>
+                      {/*<Route path='/signIn' element = {<SignInForm />} />*/}
+                      <Route path='/homepage' element = {<TabListing />} />
+                      <Route path='/signUp' element = {<SignUpForm />} />
+                      <Route path='/signIn' element = {<SignInForm />} />
+                      <Route path='/success' element = {<RegConfirm />} />
+                  </Routes>
+                      {/*<CustomInput type={'password'} placeholder={'Введите пароль'} />*/}
+                      {/*<CustomInput type={'email'} placeholder={'Введите текст'} />*/}
+                      {/*/!*<PageListing />*!/*/}
+              </Layout>
+          </div>
+      </BrowserRouter>
   );
 }
 

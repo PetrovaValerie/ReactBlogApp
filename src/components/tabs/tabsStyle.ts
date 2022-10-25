@@ -1,60 +1,103 @@
 import styled from 'styled-components';
 import {COLORS} from './../../style';
+import {TabList} from "react-tabs";
+import {NavLink} from "react-router-dom";
 
-export const Tabs = styled.div`
-  width: 55%;
-  margin: 2% auto 0;
+export const TopWrap = styled.div`
+  margin: 3% auto;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+`
+
+export const BackBtn = styled(NavLink)`
+  margin: 0;
+  padding: 0.4%;
+  text-decoration: none;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: ${COLORS.secondary};
+      :hover {
+        text-decoration: underline;
+      }
+          @media (max-width: 1340px) {
+            font-size: 14px;
+            line-height: 18px;
+          }
+`
+
+export const WebTitle = styled.h1`
+  margin-top: 2%;
+  font-family: 'Inter', sans-serif;
+  font-size: 56px;
+  line-height: 80px;
+  font-weight: 700;
+  color: ${COLORS.secondary};
+  cursor: pointer;
+  z-index: 2;
+      @media (max-width: 1340px) {
+        font-size: 44px;
+        line-height: 50px;
+      }
+`
+
+export const PrimaryTabListing = styled(TabList)`
+    display: flex;
+    outline: none;
+`
+
+export const TabText = styled.div`
+    padding: 20px 40px 25px;
+    margin-bottom: -5px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    outline: none;
+    border-bottom: 1px solid transparent;
+      :hover {
+        border-bottom: 1px solid ${COLORS.secondary};
+      }
+          @media (max-width: 1340px) {
+            padding: 10px 30px 15px;
+            font-size: 14px;
+            line-height: 20px;
+          }
+`
+
+export const TabRow = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const AllTabs = styled.div`
+  width: 70%;
+  margin: 1% auto 0;
   padding: 0 2% 0.5%;
   background-color: rgba(255, 255, 255, 0.65);
       h1 {
         max-height: 80px;
         font-family: 'Inter', sans-serif;
         font-size: 56px;
-        font-weight: 700;
         line-height: 80px;
+        font-weight: 700;
         color: ${COLORS.secondary};
       }
-  `
+`
 
-export const TabsCol = styled.ul`
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-  }
-  li {
-    margin: 0 auto;
-    padding: 0;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    cursor: pointer;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-    span {
-      padding: 10px;
-      width: 200px;
-      display: block;
-      border-bottom: 2px solid transparent;
-      border-bottom: 2px solid ${COLORS.extralightBg};
-  }
-  // переделать border у active tab, при hover-border none
-  li:first-child{
-    border-bottom: 2px solid ${COLORS.secondary};
-  }
-  li:hover span {
-    color: ${COLORS.primary};
-  }
-  // добавить логику со стейтом disabled
-  li:last-child span {
-    color: ${COLORS.mediumBg};
-  }
+export const TabCol = styled.div`
+// export const TabCol = styled(TabList)
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 
 
