@@ -13,24 +13,24 @@ import {RegConfirm} from "./containers/signUpForm/RegConfirm";
 import {PageListing} from "../src/components/pagination"
 
 function App() {
-  return (
-      <BrowserRouter>
-          <div className="App">
-              <Layout>   {/*Layout = то,что неизменно*/}
-                  <Routes>
-                      {/*<Route path='/signIn' element = {<SignInForm />} />*/}
-                      <Route path='/homepage' element = {<TabListing />} />
-                      <Route path='/signUp' element = {<SignUpForm />} />
-                      <Route path='/signIn' element = {<SignInForm />} />
-                      <Route path='/success' element = {<RegConfirm />} />
-                  </Routes>
-                      {/*<CustomInput type={'password'} placeholder={'Введите пароль'} />*/}
-                      {/*<CustomInput type={'email'} placeholder={'Введите текст'} />*/}
-                      {/*/!*<PageListing />*!/*/}
-              </Layout>
-          </div>
-      </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <div className="App">
+                <Layout>   {/*Layout = то,что неизменно*/}
+                    <Routes>
+                        {/*<Route path='/signIn' element = {<SignInForm />} />*/}
+                        <Route path='/homepage' element = {<TabListing />} />
+                        <Route path='/signUp' element = {<SignUpForm />} />
+                        <Route path='/signIn' element = {<SignInForm />} />
+                        <Route path='/success' element = {<RegConfirm />} />
+                    </Routes>
+                    {/*<CustomInput type={'password'} placeholder={'Введите пароль'} />*/}
+                    {/*<CustomInput type={'email'} placeholder={'Введите текст'} />*/}
+                    {/*/!*<PageListing />*!/*/}
+                </Layout>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
