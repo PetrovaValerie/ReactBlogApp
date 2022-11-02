@@ -27,7 +27,7 @@ export const MinCardContent = styled.div`
 
 export const MinCardText = styled.div`
   width: 70%;
-    div {
+    span {
       font-family: 'Inter', sans-serif;
       font-size: 16px;
       line-height: 24px;
@@ -54,7 +54,7 @@ export const MinCardText = styled.div`
       //line-height: 36px;
           @media (max-width: 1340px) {
           max-width: 90%;
-          font-size: 16px;
+          font-size: 15px;
           line-height: 22px;
           }
     }
@@ -68,7 +68,7 @@ export const MinCardImg = styled.div`
       width: 100%;
       cursor: pointer;
         @media (max-width: 1340px) {
-          width: 80%;
+          width: 95%;
         }
       }
 `

@@ -4,9 +4,9 @@ import {FormBlock, InputWrapper, SpanBlock} from "./customInputStyle";
 type CustomInputProps = {
     type: 'password' | 'text' | 'email',
     placeholder: 'Введите текст' | 'Введите пароль',
-    name: string,
-    value: string,
-    onChange: () => void,
+    name?: string,
+    value?: string,
+    onChange?: () => void,
 }
 
 export const CustomInput = ({type, placeholder}:CustomInputProps) => {
@@ -36,3 +36,20 @@ export const CustomInput = ({type, placeholder}:CustomInputProps) => {
         </FormBlock>
     )
 };
+{/*    <form>*/}
+{/*    <CustomInput*/}
+{/*        type="email"*/}
+{/*        placeholder={"Введите текст"}*/}
+{/*        name="email"*/}
+{/*        value={value.email}*/}
+{/*        onChange={handleChange} />*/}
+
+{/*    <CustomInput*/}
+{/*        type="password"*/}
+{/*        placeholder={"Введите пароль"}*/}
+{/*        name="email"*/}
+{/*        value={value.password}*/}
+{/*        onChange={handleChange} />*/}
+
+{/*    <button onCLick={handleSubmit} type={"submit"}>Submit</button>*/}
+{/*</form>*/}

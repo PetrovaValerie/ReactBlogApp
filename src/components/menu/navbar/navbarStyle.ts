@@ -50,9 +50,11 @@ export const Ul = styled.ul<{ open: boolean }>`
         font-weight: 600;
         color: ${COLORS.secondary};
         border-bottom: 1px solid ${COLORS.mediumBg};
-          :first-child,         
+          :first-child {
+            margin-top: 14px;
+          }                
           :nth-child(2) {
-            margin-top: 10px;
+            margin-top: 5px;
           }           
           :nth-child(5) {
             margin-top: 100%;

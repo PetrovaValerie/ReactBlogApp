@@ -1,6 +1,6 @@
 import React from 'react';
-import {Container, Form} from "./../../signInForm/signInFormStyle";
-import {TopWrap, BackBtn, WebTitle} from "../../../components/tabs/tabsStyle";
+import {Container, Form} from "../../formBasics/formStyle";
+import {TopWrap, BackBtn, WebTitle} from "../../../../components/tabs/tabsStyle";
 import {ConfirmText, SuccessButton} from "./regConfirmStyle";
 
 export const RegConfirm = () => {

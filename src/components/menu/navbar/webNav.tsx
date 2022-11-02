@@ -1,15 +1,21 @@
-import React, {ReactElement} from "react";
+import React, {ReactElement, useContext} from "react";
 import {NavLink} from "react-router-dom";
 import {Ul} from "./navbarStyle";
 import {UserName} from "../userItem";
+import "./../../../App.css";
+import {ThemeContext} from "../../themeProvider";
 
 type NavProps = {
     open: boolean;
 }
 
 export const WebNav = ({open}: NavProps): ReactElement => {
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
+
     return (
-        <Ul open={open}>
+        // <WebNavWrapper>
+        <Ul open = {open} className = {`${darkMode ? "bg-dark" : "bg-light"}`}>
             <li>
                 <UserName />
             </li>
@@ -38,5 +44,6 @@ export const WebNav = ({open}: NavProps): ReactElement => {
             {/*    <Success />*/}
             {/*</li>*/}
         </Ul>
+        // </WebNavWrapper>
     )
 };

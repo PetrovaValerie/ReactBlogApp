@@ -41,8 +41,8 @@ export const WebTitle = styled.h1`
   cursor: pointer;
   z-index: 2;
       @media (max-width: 1340px) {
-        font-size: 44px;
-        line-height: 50px;
+        font-size: 40px;
+        line-height: 45px;
       }
 `
 

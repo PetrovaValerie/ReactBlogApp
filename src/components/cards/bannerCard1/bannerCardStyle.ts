@@ -30,16 +30,20 @@ export const CardContent = styled.div`
 
 export const CardText = styled.div`
   width: 65%;
-    div {
+    span {
       padding: 5px 0;
       font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      line-height: 20px;
+      font-size: 16px;
+      line-height: 24px;
       //font-size: 16px;
       //line-height: 24px;
       font-weight: 400;
       color: ${COLORS.darkBg};
       cursor: pointer;
+      @media (max-width: 1340px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
     }
     h2 {
       width: 100%;
@@ -67,10 +71,10 @@ export const CardText = styled.div`
       line-height: 28px;
       font-weight: 400;
       color: ${COLORS.darkBg};
-      @media (max-width: 1340px) {
-      font-size: 14px;
-      line-height: 20px;
-      }
+          @media (max-width: 1340px) {
+          font-size: 14px;
+          line-height: 20px;
+          }
     }
   `
 

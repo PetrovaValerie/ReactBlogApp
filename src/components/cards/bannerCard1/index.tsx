@@ -1,17 +1,21 @@
-import React, {ReactElement} from "react";
+import React, {ReactElement, useContext} from "react";
 import {AiOutlineLike, AiOutlineDislike} from 'react-icons/ai';
 import {BsBookmark} from "react-icons/bs";
 import {BannerCardWrapper, CardText, CardContent, IconsRow, LikeCount, BookmarkWrap, CardImg} from "./bannerCardStyle";
 import img from './first.png';
+import "./../../../App.css";
+import {ThemeContext} from "../../themeProvider";
 
 export const BannerCard = (): ReactElement => {
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
 
     return (
         <BannerCardWrapper>
 
         <CardContent>
-            <CardText>
-                <div>April 20, 2021</div>
+            <CardText  className={`${darkMode ? "bg-dark" : "bg-light"}`}>
+                <span>April 20, 2021</span>
                 <h2>Astronauts prep for new solar arrays on nearly seven-hour spacewalk ...</h2>
                 <p>Astronauts Kayla Barron and Raja Chari floated out of the International Space Station airlock for a spacewalk Tuesday,
                     installing brackets and struts to support new solar arrays to upgrade the research lab’s power system on the same day that crewmate Mark Vande
@@ -23,7 +27,7 @@ export const BannerCard = (): ReactElement => {
         </CardContent>
 
         <IconsRow>
-            <LikeCount>
+            <LikeCount className={`${darkMode ? "bg-dark" : "bg-light"}`}>
                 <div>
                     <AiOutlineLike/>
                     <div>20</div>
@@ -32,7 +36,7 @@ export const BannerCard = (): ReactElement => {
                     <AiOutlineDislike/>
                 </div>
             </LikeCount>
-            <BookmarkWrap>
+            <BookmarkWrap className={`${darkMode ? "bg-dark" : "bg-light"}`}>
                 <div>
                     <BsBookmark/>
                     <a>...</a>
