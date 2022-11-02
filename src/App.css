@@ -20,10 +20,31 @@ body {
   background-color: #fff;
 }
 
-.bg-dark {
-  background-color: #222;
+  .App .bg-dark,
+  .App .bg-dark > li,
+  .App .bg-dark > li > a,
+  .App .bg-dark h1,
+  .App .bg-dark > h2,
+  .App .bg-dark > h3,
+  .App .bg-dark > div,
+  .App .bg-dark > div > div,
+  .bgDark-burger>div[open] {
+    background-color: #313037;
+    color: white;
+  }
+
+.bg-dark a:hover {
+  color: rgb(83, 102, 241) !important;
 }
 
-.bg-light {
-  background-color: #fff;
+.bgLight-burger,
+.App .bg-light {
+  background-color: transparent;
+}
+
+.App .theme-dark,
+.theme-dark > a,
+.theme-dark h3 {
+  color: white;
+  background-color: #313037;
 }

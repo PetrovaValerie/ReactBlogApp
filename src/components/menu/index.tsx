@@ -3,7 +3,7 @@ import {SearchBar, SearchIcon, NavItem} from "./menuStyle";
 import {FaSearch} from 'react-icons/fa';
 import {UserName} from './userItem';
 import {Navbar} from "./navbar/navbar";
-import {Switcher} from "../switcher";
+import {Switcher} from "../themeSwitcher";
 
 
 export const HeaderMenu = (): ReactElement => {

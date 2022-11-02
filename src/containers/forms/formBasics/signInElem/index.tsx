@@ -1,5 +1,5 @@
 import React, {ReactElement} from "react";
-import {TitleWrap} from "./signInStyle";
+import {TitleWrap} from "./signInElemStyle";
 
 export const SignIn = () => {
     return (

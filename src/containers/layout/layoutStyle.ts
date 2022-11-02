@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import {COLORS} from './../../style';
 
 export const LayoutMain = styled.main`
     margin: 0;
@@ -8,6 +7,4 @@ export const LayoutMain = styled.main`
     display: flex;
     flex-direction: column;
     align-content: center;
-
-`
-
+  `

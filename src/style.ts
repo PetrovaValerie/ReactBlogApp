@@ -13,4 +13,4 @@ export const COLORS = {
     errorContext: '#FD3419',
     lightContext: '#E8E8E8',
     whiteContext: '#FFFFFF'
-}
+};

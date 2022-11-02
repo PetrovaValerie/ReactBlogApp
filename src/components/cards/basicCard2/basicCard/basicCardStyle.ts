@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import {COLORS} from '../../../../style';
 
-
 export const BasicCardWrapper = styled.div`
   width: 50%;
+  //height: auto;
   max-height: 550px;
   //padding: 20px 25px 20px 0;
-  padding: 1% 5% 2% 0;
+  padding: 1% 3% 2% 0;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -23,14 +23,19 @@ export const BasicCardWrapper = styled.div`
 
 export const BasicCardText = styled.div`
   width: 82%;
-    div {
+    span {
       padding: 10px 0 20px;
       font-family: 'Inter', sans-serif;
       font-size: 16px;
-      font-weight: 400;
       line-height: 24px;
+      font-weight: 400;
       color: ${COLORS.darkBg};
       cursor: pointer;
+      @media (max-width: 1340px) {
+        padding: 20px 0;
+        font-size: 14px;
+        line-height: 20px;
+      }
     }
     h3 {
       width: 100%;
@@ -44,20 +49,24 @@ export const BasicCardText = styled.div`
       color: ${COLORS.secondary};
       cursor: pointer;
         @media (max-width: 1340px) {
-        font-size: 18px;
-        line-height: 28px;
+        font-size: 17px;
+        line-height: 24px;
       }
   }
 `
 
 export const BasicCardImg = styled.div`
       img {
-      padding: 1%;
-      display: block;
+      display: flex;
+      justify-content: center;
+      padding: 0.5%;
       cursor: pointer;
       width: 100%;
       //width: 352px;
       //height: 246px;
+        @media (max-width: 1340px) {
+          width: 90%;
+        }
       }
 `
 

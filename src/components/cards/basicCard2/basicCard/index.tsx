@@ -1,13 +1,16 @@
-import React, {ReactElement} from "react";
+import React, {ReactElement, useContext} from "react";
 import {BasicCardWrapper} from "./basicCardStyle";
 import img3 from './img3.png';
 import {BasicCardImg, BasicCardText, BasicIcons} from "./basicCardStyle";
 import {BookmarkWrap, IconsRow, LikeCount} from "../../bannerCard1/bannerCardStyle";
 import {AiOutlineDislike, AiOutlineLike} from "react-icons/ai";
 import {BsBookmark} from "react-icons/bs";
+import {ThemeContext} from "../../../themeProvider";
 
 
 export const BasicCard = (): ReactElement => {
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
 
     return (
         <BasicCardWrapper>
@@ -15,14 +18,14 @@ export const BasicCard = (): ReactElement => {
             <BasicCardImg>
                 <img src={img3} />
             </BasicCardImg>
-            <BasicCardText>
-                <div>April 20, 2021</div>
+            <BasicCardText className={`${darkMode ? "bg-dark" : "bg-light"}`}>
+                <span>April 20, 2021</span>
                 <h3>Astronauts prep for new solar arrays on nearly seven-hour spacewalk</h3>
             </BasicCardText>
 
             <BasicIcons>
                 <IconsRow>
-                    <LikeCount>
+                    <LikeCount className={`${darkMode ? "bg-dark" : "bg-light"}`}>
                         <div>
                             <AiOutlineLike/>
                             <div>20</div>
@@ -31,7 +34,7 @@ export const BasicCard = (): ReactElement => {
                             <AiOutlineDislike/>
                         </div>
                     </LikeCount>
-                    <BookmarkWrap>
+                    <BookmarkWrap className={`${darkMode ? "bg-dark" : "bg-light"}`}>
                         <div>
                             <BsBookmark/>
                             <a>...</a>

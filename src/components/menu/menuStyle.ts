@@ -19,7 +19,7 @@ export const SearchBar = styled.div`
   width: 68.5%;
   display: flex;
       input {
-        padding: 0 10%;
+        padding: 0 12%;
         margin: 0;
         width: 100%;
         min-height: 50px;

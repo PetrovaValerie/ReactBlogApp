@@ -1,10 +1,12 @@
-import React, {ReactElement} from "react";
-import {Tabs,Tab, TabList, TabPanel} from 'react-tabs';
+import React, {ReactElement, useContext} from "react";
+import {Tabs, Tab, TabList, TabPanel} from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import {TopWrap, WebTitle, AllTabs, TabRow, TabCol,  PrimaryTabListing, TabText} from "./tabsStyle";
 import {BannerCard} from "../cards/bannerCard1";
 import {MiniatureCol} from "../cards/miniatureCard3/minCardCol";
 import {BasicRow} from "../cards/basicCard2/basicCardRow";
+import {ThemeContext} from "../themeProvider";
+import "./../../App.css";
 
 // type TabListProps = {
 //     children: React.ChangeEvent<HTMLInputElement>;
@@ -16,19 +18,23 @@ import {BasicRow} from "../cards/basicCard2/basicCardRow";
 
 // export const TabListing = ({selected | inlist | disabled}:TabListProps ): ReactElement => {
     export const TabListing = (): ReactElement => {
+        
+        const theme = useContext(ThemeContext);
+        const darkMode = theme.state.darkMode;
+
     return (
-        <>
+        <div>
             <TopWrap>
-                <WebTitle>
+                <WebTitle className={`${darkMode ? "bg-dark" : "bg-light"}`}>
                     Blog
                 </WebTitle>
             </TopWrap>
         <Tabs>
-            <AllTabs>
+            <AllTabs className={`${darkMode ? "bg-dark" : "bg-light"}`} >
                 <TabList>
                     <PrimaryTabListing>
                         <Tab>
-                            <TabText>
+                            <TabText className={`${darkMode ? "bg-dark" : "bg-light"}`}>
                                 All
                             </TabText>
                         </Tab>
@@ -68,6 +74,6 @@ import {BasicRow} from "../cards/basicCard2/basicCardRow";
             </TabPanel>
             </AllTabs>
         </Tabs>
-        </>
+        </div>
     )
 }
