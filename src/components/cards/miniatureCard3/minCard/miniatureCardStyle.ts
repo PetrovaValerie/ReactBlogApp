@@ -66,6 +66,7 @@ export const MinCardImg = styled.div`
       float: right;
       display: block;
       width: 100%;
+      max-width: 240px;
       cursor: pointer;
         @media (max-width: 1340px) {
           width: 95%;

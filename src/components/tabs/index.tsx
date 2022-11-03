@@ -1,12 +1,23 @@
-import React, {ReactElement, useContext} from "react";
+import React, {ReactElement, useContext, useEffect, useState} from "react";
 import {Tabs, Tab, TabList, TabPanel} from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import {TopWrap, WebTitle, AllTabs, TabRow, TabCol,  PrimaryTabListing, TabText} from "./tabsStyle";
+import {TopWrap, WebTitle, AllTabs, TabRow, TabCol, PrimaryTabListing, TabText} from "./tabsStyle";
 import {BannerCard} from "../cards/bannerCard1";
 import {MiniatureCol} from "../cards/miniatureCard3/minCardCol";
 import {BasicRow} from "../cards/basicCard2/basicCardRow";
 import {ThemeContext} from "../themeProvider";
 import "./../../App.css";
+
+
+export type cardProps = {
+    id: number,
+    image: string,
+    text: string,
+    date: string,
+    lesson_num: number,
+    title: string,
+    author: number,
+}
 
 // type TabListProps = {
 //     children: React.ChangeEvent<HTMLInputElement>;
@@ -18,9 +29,16 @@ import "./../../App.css";
 
 // export const TabListing = ({selected | inlist | disabled}:TabListProps ): ReactElement => {
     export const TabListing = (): ReactElement => {
-        
+
         const theme = useContext(ThemeContext);
         const darkMode = theme.state.darkMode;
+
+        const [cards, setCards] = useState<cardProps[]>([])
+        useEffect(() => {
+            fetch("https://studapi.teachmeskills.by/blog/posts/?limit=10")
+                .then(response => response.json())
+                .then(data => setCards(data.results))
+        }, [])
 
     return (
         <div>
@@ -55,15 +73,15 @@ import "./../../App.css";
                 <TabCol>
                     <TabRow>        {/*1st row*/}
                         <BannerCard />
-                        <MiniatureCol />
+                        <MiniatureCol cards={cards}/>
                     </TabRow>
                     <TabRow>        {/*2nd row*/}
                         <BasicRow />
-                        <MiniatureCol />
+                        <MiniatureCol cards={cards}/>
                     </TabRow>
                     <TabRow>        {/*3rd row*/}
                         <BasicRow />
-                        <MiniatureCol />
+                        <MiniatureCol cards={cards}/>
                     </TabRow>
                 </TabCol>
             </TabPanel>
