@@ -33,7 +33,6 @@ export const ThemeContext = createContext<{
 
 export const ThemeProvider = ({children}: PropsType) => {
     const [state, dispatch] = useReducer(themeReducer, initialStore);
-
     return (
         <ThemeContext.Provider value={{state, dispatch}}>{children}</ThemeContext.Provider>
     )

@@ -1,5 +1,5 @@
 import React, {ReactElement} from "react";
-import {Nav} from "./navbarStyle";
+import {Nav} from "./style";
 import {Burger} from "./burger";
 
 

@@ -1,5 +1,5 @@
 import React, {ReactElement, useContext, useState} from "react";
-import {BurgerWrapper, StyledBurger} from "./navbarStyle";
+import {BurgerWrapper, StyledBurger} from "./style";
 import {WebNav} from "./webNav";
 import {ThemeContext} from "../../themeProvider";
 
@@ -11,7 +11,6 @@ export const Burger = (): ReactElement => {
 
     return (
         <BurgerWrapper className={`${darkMode ? "bgDark-burger" : "bgLight-burger"}`}>
-
             <StyledBurger open = {open}
                           onClick={() => setOpen(!open)}
                           >

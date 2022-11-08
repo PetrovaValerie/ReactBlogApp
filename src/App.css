@@ -21,10 +21,12 @@ body {
 }
 
   .App .bg-dark,
+  .App .bg-dark > a,
   .App .bg-dark > li,
   .App .bg-dark > li > a,
   .App .bg-dark h1,
   .App .bg-dark > h2,
+  .App .bg-dark > a > h2,
   .App .bg-dark > h3,
   .App .bg-dark > div,
   .App .bg-dark > div > div,

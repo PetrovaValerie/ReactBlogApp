@@ -1,21 +1,12 @@
 import React, {ReactElement} from "react";
-import {TitleWrap} from "./signInElemStyle";
+import {TitleWrap} from "./style";
 
 export const SignIn = () => {
     return (
         <>
-        <p>Sign In</p>
+                    {/*// <TitleWrap>*/}
+                    {/*//     <span>Sign In</span>*/}
+                    {/*// </TitleWrap>*/}
         </>
     )
 }
-
-
-// export const Index = (): ReactElement => {
-//     return (
-//         <>
-//         {/*// <TitleWrap>*/}
-//         {/*//     <span>Sign In</span>*/}
-//         {/*// </TitleWrap>*/}
-//          </>
-//     )
-// }

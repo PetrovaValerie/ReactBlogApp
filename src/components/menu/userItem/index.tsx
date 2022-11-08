@@ -1,5 +1,5 @@
 import React, {ReactElement} from "react";
-import {UserNameWrapper} from "./userItemStyle";
+import {UserNameWrapper} from "./style";
 
 type userNameProps = {
     userName: string;
