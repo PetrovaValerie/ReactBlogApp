@@ -1,16 +1,13 @@
 import * as React from "react";
-import {useContext} from "react";
-import {HeaderMenu} from "../../components/menu";
-import {LayoutMain} from "./layoutStyle";
-// import {Index} from "../../components/signInElem";
-// import {SignInForm} from "../signInForm";
-import {Footer} from "../../components/footer";
+import {ReactNode, useContext} from "react";
 import {ThemeContext} from "./../../components/themeProvider";
 import "../../App.css";
+import {LayoutMain} from "./style";
+import {HeaderMenu} from "../../components/menu";
+import {Footer} from "../../components/footer";
 
 type LayoutProps = {
-    // children: React.ChangeEvent<HTMLInputElement>;
-    children: any;
+    children: ReactNode;
 }
 
 export const Layout = ({children}: LayoutProps) => {
@@ -18,17 +15,15 @@ export const Layout = ({children}: LayoutProps) => {
     const darkMode = theme.state.darkMode;
 
     return (
-        <>
-            <header className="AppHeader">
-                <HeaderMenu  />
-                {/*<Index />*/}
-                {/*<SignInForm />*/}
-            </header>
-            <LayoutMain className={`${darkMode ? "bg-dark" : "bg-light"}`}>
-                {children}
-            </LayoutMain>
-            <Footer />
-        </>
+            <>
+                <header className="AppHeader">
+                    <HeaderMenu  />
+                </header>
+                <LayoutMain className={`${darkMode ? "bg-dark" : "bg-light"}`}>
+                    {children}
+                </LayoutMain>
+                <Footer />
+            </>
     )
 }
 

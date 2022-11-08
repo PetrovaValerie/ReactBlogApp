@@ -8,7 +8,6 @@ import React, {ReactElement} from "react";
 export const PageListing = (): ReactElement  => {
     return (
         <>
-{/*нужно зафетчить массив с объектами*/}
          </>
     )
 }

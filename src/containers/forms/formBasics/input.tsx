@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Input, InputTitle, ErrorSpan} from "./formStyle";
+import {Input, InputTitle, ErrorSpan} from "./style";
 
 type InputProps = {
     label: string,
@@ -11,7 +11,6 @@ type InputProps = {
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
 }
 
-// export const Input = ({type, placeholder}:InputProps) => {
 export const InputLine = (props: InputProps) => {
     const [error, setError] = useState(false);
     const validateValue = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,4 +30,4 @@ export const InputLine = (props: InputProps) => {
             {error && <ErrorSpan>Please, try again</ErrorSpan>}
         </>
     )
-};
+}

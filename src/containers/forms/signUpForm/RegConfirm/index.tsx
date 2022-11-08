@@ -1,14 +1,13 @@
 import React from 'react';
-import {Container, Form} from "../../formBasics/formStyle";
-import {TopWrap, BackBtn, WebTitle} from "../../../../components/tabs/tabsStyle";
-import {ConfirmText, SuccessButton} from "./regConfirmStyle";
+import {Container, Form} from "../../formBasics/style";
+import {TopWrap, BackBtn, WebTitle} from "../../../../components/tabs/style";
+import {ConfirmText, SuccessButton} from "./style";
 
 export const RegConfirm = () => {
-
     return (
         <>
             <TopWrap>
-                <BackBtn to="/homepage">
+                <BackBtn to="/">
                     Back to home
                 </BackBtn>
                 <WebTitle>Success</WebTitle>
@@ -19,11 +18,11 @@ export const RegConfirm = () => {
                         Email confirmed. <br></br>
                         Your registration is now completed.
                     </ConfirmText>
-                    <SuccessButton to="/homepage">
+                    <SuccessButton to="/">
                         Go to home
                     </SuccessButton>
                 </Form>
             </Container>
         </>
-        )
-    }
+    )
+}

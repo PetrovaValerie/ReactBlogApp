@@ -1,8 +1,8 @@
 import React, {useContext, useState} from 'react';
-import {Container, Form, Text, ForgotPassOption} from "../formBasics/formStyle";
-import {TopWrap, BackBtn, WebTitle} from "../../../components/tabs/tabsStyle";
+import {Container, Form, Text, ForgotPassOption} from "../formBasics/style";
+import {TopWrap, BackBtn, WebTitle} from "../../../components/tabs/style";
 import {ThemeContext} from "../../../components/themeProvider";
-import {SignInBtn} from "../formBasics/formStyle";
+import {SignInBtn} from "../formBasics/style";
 import {InputLine} from "../formBasics/input";
 
 type SignInFormProps = {
@@ -30,7 +30,7 @@ export const SignInForm = () => {
             return (
                      <>
                         <TopWrap className={`${darkMode ? "theme-dark" : ""}`}>
-                            <BackBtn to="/homepage">
+                            <BackBtn to="/">
                                 Back to home
                             </BackBtn>
                             <WebTitle>

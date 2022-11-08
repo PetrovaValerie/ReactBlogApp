@@ -1,6 +1,6 @@
 import React, {ReactElement, useContext} from "react";
-import {NavLink} from "react-router-dom";
-import {Ul} from "./navbarStyle";
+import {Link} from "react-router-dom";
+import {Ul} from "./style";
 import {UserName} from "../userItem";
 import "./../../../App.css";
 import {ThemeContext} from "../../themeProvider";
@@ -20,22 +20,22 @@ export const WebNav = ({open}: NavProps): ReactElement => {
                 <UserName />
             </li>
             <li>
-                <NavLink to="/homepage">
+                <Link to="/">
                     Home
-                </NavLink>
+                </Link>
             </li>
             <li>
-                <NavLink to="/signUp">
+                <Link to="/signUp">
                     Sign Up
-                </NavLink>
+                </Link>
             </li>
             <li>
                 <div>Add Post</div>
             </li>
             <li>
-                <NavLink to="/signIn">
+                <Link to="/signIn">
                     Sign In
-                </NavLink>
+                </Link>
             </li>
             <li>
                 <div>Log Out</div>
