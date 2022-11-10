@@ -44,6 +44,7 @@ export const BasicCard:FC<ArrProps> = ({data}) => {
                             </BookmarkWrap>
                         </IconsRow>
                     </BasicIcons>
+
                 </BasicCardWrapper>
             )}
         </>
