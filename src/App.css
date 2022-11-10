@@ -27,12 +27,16 @@ body {
   .App .bg-dark h1,
   .App .bg-dark > h2,
   .App .bg-dark > a > h2,
+  .App .bg-dark > a > h3,
+  .App .bg-dark > div div a > p,
+  .App .bg-dark > div h2,
+  .App .bg-dark > div p,
   .App .bg-dark > h3,
   .App .bg-dark > div,
   .App .bg-dark > div > div,
   .bgDark-burger>div[open] {
     background-color: #313037;
-    color: white;
+    color: white !important;
   }
 
 .bg-dark a:hover {
