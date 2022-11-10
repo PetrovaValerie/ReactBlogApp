@@ -1,6 +1,6 @@
 React-App BlogPosts
 
- Using this App the User will:
+ Using this App the User can
            Log In to the Website
            Sign Up for free usage
            Explore different dog breeds
