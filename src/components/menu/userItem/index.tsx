@@ -16,8 +16,8 @@ export const UserName = (): ReactElement => {
     // }
     return (
         <UserNameWrapper>
-                <span>AM</span>
-                <p>Artem Makin</p>
+                <span>VP</span>
+                <p>Valerie Petrova</p>
         </UserNameWrapper>
     )
 }

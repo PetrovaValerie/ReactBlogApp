@@ -7,32 +7,46 @@ export const BaseRow = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
+  
+    @media (max-width: 320px) {
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr;
+      justify-content: center;
+      align-items: center;
+    }
   `
 
 export const BasicCardWrapper = styled.div`
-  max-height: 435px;
-  padding: 3% 1% 2%;
+  height: 400px;
+  padding: 4% 1% 2%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  ::after {
-    display: block;
-    content: '';
-    width: 95%;
-    height: 1px;
-    position: absolute;
-    bottom: 0;
-    background-color: ${COLORS.mediumBg};
-  }
-  a {
-    text-decoration: none;
-    outline: none;
-  }
-      @media (max-width: 1340px) {
-        padding: 1%;
-        max-height: 320px;
-      }
+    @media (max-width: 1340px) {
+      height: 360px;
+      padding: 2% 1% 6%;
+    }
+    @media (max-width: 768px) {
+      align-items: center;
+    }
+  
+    ::after {
+      display: block;
+      content: '';
+      width: 95%;
+      height: 1px;
+      position: absolute;
+      bottom: 0;
+      background-color: ${COLORS.mediumBg};
+        @media (max-width: 1340px) {
+          bottom: 0;
+        }
+    }
+    a {
+      text-decoration: none;
+      outline: none;
+    }
   `
 
 export const BasicCardText = styled.div`
@@ -41,28 +55,32 @@ export const BasicCardText = styled.div`
       display: block;
       padding: 5px 0 10px;
       font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 14px;
+      line-height: 20px;
       font-weight: 400;
       color: ${COLORS.darkBg};
       cursor: pointer;
+      
       @media (max-width: 1340px) {
         padding: 20px 0;
         font-size: 14px;
         line-height: 20px;
       }
+      @media (max-width: 768px) {
+        padding: 0;
+      }
     }
     h3 {
-      width: 100%;
-      height: auto;
-      margin: 5% 0;
+      width: 80%;
+      height: 90px;
+      margin: 0.5% 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
       font-weight: 600;
-      font-size: 26px;
-      line-height: 36px;
+      font-size: 20px;
       color: ${COLORS.secondary};
       cursor: pointer;
+      overflow: hidden;
       :hover {
         text-shadow: 4px 4px ${COLORS.lightContext};
       }
@@ -70,6 +88,9 @@ export const BasicCardText = styled.div`
         font-size: 17px;
         line-height: 24px;
       }
+        @media (max-width: 768px) {
+          margin: 0 auto;
+        }
   }
 `
 
@@ -79,14 +100,20 @@ export const BasicCardImg = styled.div`
       display: flex;
       justify-content: center;
       cursor: pointer;
-      width: 100%;
-      min-width: 250px;
+      height: 160px;
         :hover{
           box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
           rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
         }
         @media (max-width: 1340px) {
-          width: 90%;
+          height: 130px;
+        }
+        @media (max-width: 768px) {
+          padding: 2%;
+        }
+        @media (max-width: 320px) {
+          display: block;
+          margin: 0 auto;
         }
       }
 `

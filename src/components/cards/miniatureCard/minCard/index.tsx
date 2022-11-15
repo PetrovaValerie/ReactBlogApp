@@ -6,25 +6,30 @@ import {BsBookmark} from "react-icons/bs";
 import {BookmarkWrap, IconsRow, LikeCount} from "../../bannerCard/style";
 import {MinCardWrapper, MinCardContent, MinCardImg, MinCardText} from "./style";
 import {ArrProps, PostArray} from "../../../../data/postArray";
+import {useAppSelector} from "../../../../redux/rootReducer";
 
 
-export const MiniatureCard:FC<ArrProps> = ({data}): ReactElement => {
+
+export const MiniatureCard= () => {
+
+    const postsArray = useAppSelector(state => state.postReducer.posts)
+
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
 
     return (
         <>
-            {PostArray.data.slice(5, 11).map((e) =>
+            {postsArray.slice(1, 7).map((e) =>
                 <MinCardWrapper key={e.id}>
                     <MinCardContent>
                         <MinCardText className={`${darkMode ? "bg-dark" : "bg-light"}`}>
                             <span>{e.date}</span>
-                            <Link to={`/breeds/${e.title}`} onClick={() => window.scrollTo(0, 0)}>
+                            <Link to={`/post/${e.title}`} onClick={() => window.scrollTo(0, 0)}>
                                 <h3>{e.title}</h3>
                             </Link>
                         </MinCardText>
                         <MinCardImg>
-                            <img src={e.image} />
+                            <img src={e.image} alt={"post"}/>
                         </MinCardImg>
                     </MinCardContent>
 
@@ -48,5 +53,4 @@ export const MiniatureCard:FC<ArrProps> = ({data}): ReactElement => {
                 </MinCardWrapper>
             )}
         </>
-    )
-}
+    )}

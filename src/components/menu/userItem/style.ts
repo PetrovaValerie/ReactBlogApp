@@ -10,6 +10,10 @@ export const UserNameWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
       span {
         min-width: 15%;
         height: 30px;

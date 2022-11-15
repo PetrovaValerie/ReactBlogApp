@@ -1,4 +1,5 @@
 import React from 'react';
+import {PostTypes} from "../redux/blog/types/types";
 
 export type ArrProps = {
     count?: number,
@@ -7,15 +8,6 @@ export type ArrProps = {
     data: PostTypes[],
 }
 
-export type PostTypes = {
-    id: number,
-    image: string,
-    title: string,
-    text: string,
-    date: string,
-    lesson_num: number,
-    author: number,
-}
 
 export const PostArray: ArrProps = {
     "count": 20,
