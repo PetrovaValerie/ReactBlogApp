@@ -7,28 +7,32 @@ import {BannerCardWrapper, CardText, CardContent, IconsRow, LikeCount, BookmarkW
 import {ThemeContext} from "../../themeProvider";
 import {PostArray} from "../../../data/postArray";
 import {ArrProps} from "../../../data/postArray";
+import {useAppSelector} from "../../../redux/rootReducer";
 
-export const BannerCard:FC<ArrProps> = ({data}) => {
+
+export const BannerCard = () => {
+
+    const postsArray = useAppSelector(state => state.postReducer.posts)
+
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
 
     return (
         <>
-            {PostArray.data.slice(0, 1).map((e) =>
+            {postsArray.slice(0, 1).map((e) =>
                  <BannerCardWrapper key={e.id}>
                     <CardContent>
                         <CardText  className={`${darkMode ? "bg-dark" : "bg-light"}`}>
                             <span>{e.date}</span>
-                            <Link to={`/breeds/${e.title}`} onClick={() => window.scrollTo(0, 0)}>
+                            <Link to={`/post/${e.title}`} onClick={() => window.scrollTo(0, 0)}>
                                     <h2>{e.title}</h2>
                             </Link>
                             <p>{e.text}</p>
                         </CardText>
                         <CardImg>
-                            <img src={e.image} />
+                            <img src={e.image} alt={"post"}/>
                         </CardImg>
                     </CardContent>
-
                     <IconsRow>
                         <LikeCount className={`${darkMode ? "bg-dark" : "bg-light"}`}>
                             <div>

@@ -3,10 +3,10 @@ import {MiniatureCard} from "../minCard";
 import {MinCol} from "../minCard/style";
 import {ArrProps} from "../../../../data/postArray";
 
-export const MiniatureCol:FC<ArrProps> = ({data}) => {
+export const MiniatureCol = () => {
     return (
          <MinCol>
-             <MiniatureCard data={data}/>
+             <MiniatureCard />
         </MinCol>
     )
 }

@@ -1,6 +1,6 @@
 import * as React from "react";
 import {ReactNode, useContext} from "react";
-import {ThemeContext} from "./../../components/themeProvider";
+import {ThemeContext} from "../../components/themeProvider";
 import "../../App.css";
 import {LayoutMain} from "./style";
 import {HeaderMenu} from "../../components/menu";

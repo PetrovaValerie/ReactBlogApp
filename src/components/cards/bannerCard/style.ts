@@ -4,7 +4,7 @@ import {COLORS} from '../../../style';
 export const BannerCardWrapper = styled.div`
   grid-area: banner;
   width: 100%;
-  max-height: 448px;
+  height: 400px;
   padding: 1% 5% 1% 0;
   position: relative;
       ::after {
@@ -13,9 +13,12 @@ export const BannerCardWrapper = styled.div`
         width: 98%;
         height: 1px;
         position: absolute;
-        bottom: 0;
+        bottom: -4%;
         left: 0;
         background-color: ${COLORS.mediumBg};
+        @media (max-width: 1340px) {
+          bottom: 0;
+        }
       }
       a {
         text-decoration: none;
@@ -23,6 +26,9 @@ export const BannerCardWrapper = styled.div`
       }
   @media (max-width: 1340px) {
     max-height: 360px;
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 `
 
@@ -34,13 +40,18 @@ export const CardContent = styled.div`
 `
 
 export const CardText = styled.div`
-  width: 65%;
+  width: 60%;
+  max-height: 330px;
+  overflow: hidden;
+      @media (max-width: 1340px) {
+        max-height: 280px;
+      }
     span {
       display: block;
       padding: 5px 0 10px;
       font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 14px;
+      line-height: 20px;
       font-weight: 400;
       color: ${COLORS.darkBg};
       cursor: pointer;
@@ -55,8 +66,8 @@ export const CardText = styled.div`
       margin: 5px 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
-      font-size: 32px;
-      line-height: 44px;
+      font-size: 28px;
+      //line-height: 44px;
       font-weight: 700;
       color: ${COLORS.secondary};
       cursor: pointer;
@@ -72,22 +83,23 @@ export const CardText = styled.div`
       width: 100%;
       height: auto;
       margin: 15px 0;
-      padding: 0;
+      padding: 3% 0;
       font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      line-height: 28px;
-      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
       overflow: hidden;
       color: ${COLORS.darkBg};
+      cursor: pointer;
           @media (max-width: 1340px) {
           font-size: 14px;
-          line-height: 20px;
+          line-height: 16px;
           }
     }
+
 `
 
 export const CardImg = styled.div`
-  width: 35%;
+  width: 40%;
       img {
       float: right;
       display: block;
@@ -102,7 +114,7 @@ export const CardImg = styled.div`
 
 export const IconsRow = styled.div`
     width: 100%;
-    padding: 5% 0 3%;
+    padding: 5% 2% 3%;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -9,11 +9,12 @@ export const Content = styled.div`
     align-items: center;
     position: relative;
  `
+
 export const NavWrap = styled.div`
-     width: 140px;
+     width: 240px;
      position: absolute;
-     left:26%;
-     top: 4%;
+     left:20%;
+     top: 2%;
      display: flex;
      justify-content: space-evenly;
      font-family: 'Inter', sans-serif;
@@ -41,11 +42,12 @@ export const HomeBtn = styled(NavLink)`
  `
 
 export const Title = styled.h2`
-    margin: 5% 0 1%;
+    max-width: 50%;
+    margin: 10% 0 1%;
     font-family: 'Inter', sans-serif;
-    font-size: 50px;
-    line-height: 70px;
-    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    font-weight: 600;
     color: ${COLORS.secondary};
     outline: none;
     cursor: pointer;

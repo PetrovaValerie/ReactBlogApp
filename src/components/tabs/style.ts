@@ -95,6 +95,13 @@ export const TabCol = styled.div`
             "basic min";
       grid-template-rows: repeat(3, auto);
       grid-template-columns: 70% 30%;
+  
+          @media (max-width: 768px) {
+            grid-template-areas: 
+                    "basic basic"
+                    "basic basic"
+                    "basic basic";
+          }
 `
 
 

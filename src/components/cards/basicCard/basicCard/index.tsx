@@ -6,21 +6,25 @@ import {BasicCardWrapper, BasicCardImg, BasicCardText, BasicIcons} from "./style
 import {BookmarkWrap, IconsRow, LikeCount} from "../../bannerCard/style";
 import {ThemeContext} from "../../../themeProvider";
 import {ArrProps, PostArray} from "../../../../data/postArray";
+import {useAppSelector} from "../../../../redux/rootReducer";
 
-export const BasicCard:FC<ArrProps> = ({data}) => {
+export const BasicCard = () => {
+
+    const postsArray = useAppSelector(state => state.postReducer.posts)
+
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
 
     return (
         <>
-            {PostArray.data.slice(1, 5).map((e) =>
+            {postsArray.slice(7, 13).map((e) =>
                 <BasicCardWrapper key={e.id}>
                     <BasicCardImg>
-                        <img src={e.image} />
+                        <img src={e.image} alt={"post"}/>
                     </BasicCardImg>
                     <BasicCardText className={`${darkMode ? "bg-dark" : "bg-light"}`}>
                         <span>{e.date}</span>
-                        <Link to={`/breeds/${e.title}`} onClick={() => window.scrollTo(0, 0)}>
+                        <Link to={`/post/${e.title}`} onClick={() => window.scrollTo(0, 0)}>
                             <h3>{e.title}</h3>
                         </Link>
                     </BasicCardText>
