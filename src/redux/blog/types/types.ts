@@ -21,7 +21,7 @@ export type ActionPostType = {
 
 export type postsStateType = {
     posts: PostTypes[],
-    id?: number[],
+    id: number[],
 }
 
 export type mainReducerType = {
