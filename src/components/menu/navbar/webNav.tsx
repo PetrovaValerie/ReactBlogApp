@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {Ul} from "./style";
 import {UserName} from "../userItem";
 import "./../../../App.css";
-import {ThemeContext} from "../../themeProvider";
+import {ThemeContext} from "../../theme/themeProvider";
 
 type NavProps = {
     open: boolean;

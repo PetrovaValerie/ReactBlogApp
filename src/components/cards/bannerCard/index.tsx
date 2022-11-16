@@ -1,22 +1,18 @@
-import React, {FC, useContext} from "react";
+import React, {useContext} from "react";
 import {Link} from "react-router-dom";
-import {AiOutlineLike, AiOutlineDislike} from 'react-icons/ai';
-import {BsBookmark} from "react-icons/bs";
+import {ThemeContext} from "../../theme/themeProvider";
+import {useAppSelector} from "../../../redux/store";
 import "../../../App.css";
-import {BannerCardWrapper, CardText, CardContent, IconsRow, LikeCount, BookmarkWrap, CardImg} from "./style";
-import {ThemeContext} from "../../themeProvider";
-import {PostArray} from "../../../data/postArray";
-import {ArrProps} from "../../../data/postArray";
-import {useAppSelector} from "../../../redux/rootReducer";
+import {BannerCardWrapper, CardText, CardContent, IconsRow, CardImg} from "./style";
+import {BookMark} from "../../cardElems/bookmark";
+import {Likes} from "../../cardElems/likeCount";
 
 
 export const BannerCard = () => {
-
-    const postsArray = useAppSelector(state => state.postReducer.posts)
-
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
 
+    const postsArray = useAppSelector(state => state.postReducer.posts);
     return (
         <>
             {postsArray.slice(0, 1).map((e) =>
@@ -24,8 +20,9 @@ export const BannerCard = () => {
                     <CardContent>
                         <CardText  className={`${darkMode ? "bg-dark" : "bg-light"}`}>
                             <span>{e.date}</span>
-                            <Link to={`/post/${e.title}`} onClick={() => window.scrollTo(0, 0)}>
-                                    <h2>{e.title}</h2>
+                            <Link to = {`/post/${e.title}`}
+                                  onClick = {() => window.scrollTo(0, 0)}>
+                                <h2>{e.title}</h2>
                             </Link>
                             <p>{e.text}</p>
                         </CardText>
@@ -33,22 +30,10 @@ export const BannerCard = () => {
                             <img src={e.image} alt={"post"}/>
                         </CardImg>
                     </CardContent>
+
                     <IconsRow>
-                        <LikeCount className={`${darkMode ? "bg-dark" : "bg-light"}`}>
-                            <div>
-                                <AiOutlineLike/>
-                                <div>{e.lesson_num}</div>
-                            </div>
-                            <div>
-                                <AiOutlineDislike/>
-                            </div>
-                        </LikeCount>
-                        <BookmarkWrap className={`${darkMode ? "bg-dark" : "bg-light"}`}>
-                            <div>
-                                <BsBookmark/>
-                                <a>...</a>
-                            </div>
-                        </BookmarkWrap>
+                        <Likes />
+                        <BookMark id={e.id} />
                     </IconsRow>
                 </BannerCardWrapper>
             )}

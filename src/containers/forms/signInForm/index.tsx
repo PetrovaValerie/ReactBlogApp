@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import {Container, Form, Text, ForgotPassOption} from "../formBasics/style";
 import {TopWrap, BackBtn, WebTitle} from "../../../components/tabs/style";
-import {ThemeContext} from "../../../components/themeProvider";
+import {ThemeContext} from "../../../components/theme/themeProvider";
 import {SignInBtn} from "../formBasics/style";
 import {InputLine} from "../formBasics/input";
 

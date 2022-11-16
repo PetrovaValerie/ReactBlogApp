@@ -2,14 +2,15 @@ import * as React from 'react';
 import styledComponents from 'styled-components';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import './App.css';
-import {ThemeProvider} from "./components/themeProvider";
+import {ThemeProvider} from "./components/theme/themeProvider";
 import {Layout} from './containers/layout/layout';
 import {TabListing} from "./components/tabs";
 import {SignInForm} from "./containers/forms/signInForm";
 import {SignUpForm} from "./containers/forms/signUpForm";
 import {RegConfirm} from "./containers/forms/signUpForm/RegConfirm";
 import {SelectedPost} from "./components/selectedPost";
-import {PostArray} from "./data/postArray";
+import {FavoriteTab} from "./components/tabs/tabPanel/favTabs";
+import {AllTabsWrap} from "./components/tabs/tabPanel/allTabs";
 
 function App() {
 
@@ -19,7 +20,11 @@ function App() {
                 <ThemeProvider >
                     <Layout>
                         <Routes>
-                            <Route path='/' element = {<TabListing/>} />
+                            <Route path='/' element = {<TabListing/>} >
+                                <Route index element = {<AllTabsWrap/>} />
+                                <Route path=':favorite' element = {<FavoriteTab />} />
+                                {/*<Route path=':popular' element = {<PopularTab />} />*/}
+                            </Route>
                             <Route path='/signUp' element = {<SignUpForm />} />
                             <Route path='/signIn' element = {<SignInForm />} />
                             <Route path='/success' element = {<RegConfirm />} />

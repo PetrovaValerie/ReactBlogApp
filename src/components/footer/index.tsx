@@ -1,6 +1,6 @@
 import React, {ReactElement, useContext} from "react";
 import {FooterWrapper} from "./style";
-import {ThemeContext} from "../themeProvider";
+import {ThemeContext} from "../theme/themeProvider";
 
 export const Footer = (): ReactElement => {
     const theme = useContext(ThemeContext);

@@ -2,7 +2,7 @@ import React, {FC} from "react";
 import {useParams} from "react-router-dom";
 import {PostArray, ArrProps} from "../../data/postArray";
 import {Content, NavWrap, HomeBtn, Title, Img, Description} from "./style";
-import {useAppSelector} from "../../redux/rootReducer";
+import {useAppSelector} from "../../redux/store";
 
 
 export const SelectedPost = () => {

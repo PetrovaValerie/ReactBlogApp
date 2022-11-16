@@ -1,28 +1,31 @@
-import React, {FC, useContext, useEffect, useState} from "react";
-import {ThemeContext} from "../themeProvider";
-import {Tabs, Tab, TabList, TabPanel} from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
-import "../../App.css";
-import {TopWrap, WebTitle, AllTabs, TabCol, PrimaryTabListing, TabText} from "./style";
-import {BannerCard} from "../cards/bannerCard";
-import {MiniatureCol} from "../cards/miniatureCard/minCardCol";
-import {BasicRow} from "../cards/basicCard/basicCardRow";
-import {ArrProps} from "../../data/postArray";
-import {PostTypes} from "../../redux/blog/types/types";
-import {useDispatch, useSelector} from "react-redux";
+import React, {FC, ReactNode, useContext, useEffect, useState} from "react";
+import {ThemeContext} from "../theme/themeProvider";
+import {useDispatch} from "react-redux";
 import {addPosts} from "../../redux/blog/action";
-import {useAppSelector} from "../../redux/rootReducer";
+import {useNavigate, useParams} from "react-router-dom";
+import "../../App.css";
+import {TopWrap, WebTitle, AllTabs, Loader} from "./style";
+import {Tabs, TabPanel} from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import {TabCategories} from "./tabCategories/tabList";
 
+export type ChildProp = {
+    children?: ReactNode
+}
 
+export const TabListing = ({children}:ChildProp) => {
 
-// export const TabListing:FC<ArrProps>  = ({data}) => {
-export const TabListing = () => {
+// export const TabListing = ({children}) => {
+
+    const params = useParams();
+    const paramsTab = Object.values(params)[0];
+    const navigate = useNavigate();
 
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
 
     const dispatch = useDispatch();
-    const [state, setState] = useState(true)
+    const [state, setState] = useState(true);
 
     useEffect(() => {
         if (state) {
@@ -35,49 +38,21 @@ export const TabListing = () => {
             })
         }
     }, )
+            return (
+                <>
+                    <TopWrap>
+                        <WebTitle className={`${darkMode ? "bg-dark" : "bg-light"}`}>
+                            Blog
+                        </WebTitle>
+                    </TopWrap>
 
-    return (
-        <>
-            <TopWrap>
-                <WebTitle className={`${darkMode ? "bg-dark" : "bg-light"}`}>
-                    Blog
-                </WebTitle>
-            </TopWrap>
-            <Tabs>
-                <AllTabs className={`${darkMode ? "bg-dark" : "bg-light"}`} >
-                    <TabList>
-                        <PrimaryTabListing>
-                            <Tab>
-                                <TabText className={`${darkMode ? "bg-dark" : "bg-light"}`}>
-                                    All
-                                </TabText>
-                            </Tab>
-                            <Tab>
-                                <TabText>
-                                    My favorites
-                                </TabText>
-                            </Tab>
-                            <Tab>
-                                <TabText>
-                                    Popular
-                                </TabText>
-                            </Tab>
-                        </PrimaryTabListing>
-                    </TabList>
-                <TabPanel>
-                    <TabCol>
-                            <BannerCard />
-                            <BasicRow />
-                            <MiniatureCol />
-                    </TabCol>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Any content 2</h2>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Any content 3</h2>
-                </TabPanel>
-                </AllTabs>
-            </Tabs>
-        </>
-    )}
+                    <Tabs>
+                        <AllTabs className={`${darkMode ? "bg-dark" : "bg-light"}`} >
+                            <TabCategories />
+                            <TabPanel>
+                                {!state ? children : <Loader/>}
+                            </TabPanel>
+                        </AllTabs>
+                    </Tabs>
+                </>
+        )}

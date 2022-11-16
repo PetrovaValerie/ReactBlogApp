@@ -1,20 +1,17 @@
-import React, {FC, useContext} from "react";
+import React, {useContext} from "react";
 import {Link} from "react-router-dom";
-import {AiOutlineDislike, AiOutlineLike} from "react-icons/ai";
-import {BsBookmark} from "react-icons/bs";
 import {BasicCardWrapper, BasicCardImg, BasicCardText, BasicIcons} from "./style";
-import {BookmarkWrap, IconsRow, LikeCount} from "../../bannerCard/style";
-import {ThemeContext} from "../../../themeProvider";
-import {ArrProps, PostArray} from "../../../../data/postArray";
-import {useAppSelector} from "../../../../redux/rootReducer";
+import {IconsRow} from "../../bannerCard/style";
+import {ThemeContext} from "../../../theme/themeProvider";
+import {useAppSelector} from "../../../../redux/store";
+import {BookMark} from "../../../cardElems/bookmark";
+import {Likes} from "../../../cardElems/likeCount";
 
 export const BasicCard = () => {
-
-    const postsArray = useAppSelector(state => state.postReducer.posts)
-
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
 
+    const postsArray = useAppSelector(state => state.postReducer.posts)
     return (
         <>
             {postsArray.slice(7, 13).map((e) =>
@@ -31,24 +28,10 @@ export const BasicCard = () => {
 
                     <BasicIcons>
                         <IconsRow>
-                            <LikeCount className={`${darkMode ? "bg-dark" : "bg-light"}`}>
-                                <div>
-                                    <AiOutlineLike/>
-                                    <div>{e.lesson_num}</div>
-                                </div>
-                                <div>
-                                    <AiOutlineDislike/>
-                                </div>
-                            </LikeCount>
-                            <BookmarkWrap className={`${darkMode ? "bg-dark" : "bg-light"}`}>
-                                <div>
-                                    <BsBookmark/>
-                                    <a>...</a>
-                                </div>
-                            </BookmarkWrap>
+                            <Likes />
+                            <BookMark id={e.id} />
                         </IconsRow>
                     </BasicIcons>
-
                 </BasicCardWrapper>
             )}
         </>

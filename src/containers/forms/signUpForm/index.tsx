@@ -1,12 +1,15 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Container, Form, Text} from "../formBasics/style";
 import {TopWrap, BackBtn, WebTitle} from "../../../components/tabs/style";
-import {ThemeContext} from "../../../components/themeProvider";
+import {ThemeContext} from "../../../components/theme/themeProvider";
 import {SignUpBtn} from "../formBasics/style";
 import {InputLine} from "../formBasics/input";
+import {useDispatch} from "react-redux";
+import {signUpRequest} from "../../../redux/authReducer/action";
+import {SignUpError} from "./style";
 
 type SignUpFormProps = {
-    name: string,
+    username: string,
     email: string,
     password: string,
     confirmPassword: string,
@@ -15,13 +18,25 @@ type SignUpFormProps = {
 export const SignUpForm = () => {
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
+
     const [value, setValue] = useState<SignUpFormProps>({
-        name: '',
+        username: '',
         email: '',
         password: '',
         confirmPassword: '',
     })
-// в useState поступят все значения формы
+
+    const [passMatch, setPassMatch] = useState(true);
+    useEffect(() => validatePassword());
+
+    const dispatch = useDispatch();
+
+    //handleForm
+    const dataForm = () => {
+        dispatch(signUpRequest(value));
+    }
+
+    // в useState поступят все значения формы
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         e.preventDefault();
         setValue((prevState: SignUpFormProps) => {
@@ -31,6 +46,11 @@ export const SignUpForm = () => {
             }
         })
     };
+
+    const validatePassword = () => {
+        (value.password === value.confirmPassword) ? setPassMatch(true) : setPassMatch(false);
+    }
+
         return (
             <>
                 <TopWrap className={`${darkMode ? "theme-dark" : ""}`}>
@@ -41,14 +61,16 @@ export const SignUpForm = () => {
                 </TopWrap>
                 <Container>
                     <Form className={`${darkMode ? "theme-dark" : ""}`}>
+
                         <InputLine
                             label={'Name'}
-                            name={'name'}
+                            name={'username'}
                             type={'text'}
                             placeholder={'Your name'}
-                            value={value.name}
+                            value={value.username}
                             error
-                            onChange={handleChange} />
+                            onChange={handleChange}
+                            aria-required="true" />
                         <InputLine
                             label={'Email'}
                             name={'email'}
@@ -56,7 +78,8 @@ export const SignUpForm = () => {
                             placeholder={'Your email'}
                             value={value.email}
                             error
-                            onChange={handleChange} />
+                            onChange={handleChange}
+                            aria-required="true" />
                         <InputLine
                             label={'Password'}
                             name={'password'}
@@ -64,7 +87,8 @@ export const SignUpForm = () => {
                             placeholder={'Your password'}
                             value={value.password}
                             error
-                            onChange={handleChange} />
+                            onChange={handleChange}
+                            aria-required="true" />
                         <InputLine
                             label={'Confirm password'}
                             name={'confirmPassword'}
@@ -72,8 +96,19 @@ export const SignUpForm = () => {
                             placeholder={'Confirm password'}
                             value={value.confirmPassword}
                             error
-                            onChange={handleChange} />
-                        <SignUpBtn>
+                            onChange={handleChange}
+                            aria-required={true} />
+                            {/*// aria-invalid={passMatch ? true : false} */}
+                            {/*// className={`form-control {passMatch ? "" : "input-error-border"}}*/}
+
+                        <SignUpError>
+                            {value.password !== value.confirmPassword ? "" : ""}
+                        </SignUpError>
+                        <SignUpError className="input-error">
+                            {passMatch ? "" : "Error: Passwords do not match"}
+                        </SignUpError>
+
+                        <SignUpBtn onClick={dataForm}>
                             Sign Up
                         </SignUpBtn>
                         <Text>Don't have an account? <a>Sign Up</a></Text>

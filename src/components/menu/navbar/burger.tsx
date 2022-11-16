@@ -1,7 +1,7 @@
 import React, {ReactElement, useContext, useState} from "react";
 import {BurgerWrapper, StyledBurger} from "./style";
 import {WebNav} from "./webNav";
-import {ThemeContext} from "../../themeProvider";
+import {ThemeContext} from "../../theme/themeProvider";
 
 
 export const Burger = (): ReactElement => {
