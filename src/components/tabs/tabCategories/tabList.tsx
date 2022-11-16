@@ -1,14 +1,15 @@
 import {Tab, TabList} from "react-tabs";
 import {PrimaryTabListing, TabText} from "../style";
 import React, {useContext} from "react";
-// import {navigate} from "@reach/router";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {ThemeContext} from "../../theme/themeProvider";
 
 export const TabCategories = () => {
-
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
+
+    const params = useParams();
+    const paramsTab = Object.values(params)[0];
 
     const navigate = useNavigate();
     const allPostsTab = () => {
@@ -32,7 +33,6 @@ export const TabCategories = () => {
                             My favorites
                         </TabText>
                     </Tab>
-
                     <Tab>
                         <TabText>
                             Popular
