@@ -20,10 +20,9 @@ function App() {
                 <ThemeProvider >
                     <Layout>
                         <Routes>
-                            <Route path='/' element = {<TabListing/>} >
-                                <Route index element = {<AllTabsWrap/>} />
-                                <Route path=':favorite' element = {<FavoriteTab />} />
-                                {/*<Route path=':popular' element = {<PopularTab />} />*/}
+                            <Route>
+                                <Route path='/' element = {<TabListing><AllTabsWrap/></TabListing>} />
+                                <Route path='/:favorites' element = {<TabListing><FavoriteTab/></TabListing>} />
                             </Route>
                             <Route path='/signUp' element = {<SignUpForm />} />
                             <Route path='/signIn' element = {<SignInForm />} />

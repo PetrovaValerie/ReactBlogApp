@@ -1,26 +1,18 @@
-import React, {FC, ReactNode, useContext, useEffect, useState} from "react";
+import React, {ReactNode, useContext, useEffect, useState} from "react";
 import {ThemeContext} from "../theme/themeProvider";
 import {useDispatch} from "react-redux";
 import {addPosts} from "../../redux/blog/action";
-import {useNavigate, useParams} from "react-router-dom";
 import "../../App.css";
 import {TopWrap, WebTitle, AllTabs, Loader} from "./style";
 import {Tabs, TabPanel} from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import {TabCategories} from "./tabCategories/tabList";
 
-export type ChildProp = {
+export type ChildProps = {
     children?: ReactNode
 }
 
-export const TabListing = ({children}:ChildProp) => {
-
-// export const TabListing = ({children}) => {
-
-    const params = useParams();
-    const paramsTab = Object.values(params)[0];
-    const navigate = useNavigate();
-
+export const TabListing = ({children}:ChildProps) => {
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
 
@@ -45,7 +37,6 @@ export const TabListing = ({children}:ChildProp) => {
                             Blog
                         </WebTitle>
                     </TopWrap>
-
                     <Tabs>
                         <AllTabs className={`${darkMode ? "bg-dark" : "bg-light"}`} >
                             <TabCategories />
