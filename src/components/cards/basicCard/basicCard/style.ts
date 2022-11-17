@@ -71,7 +71,7 @@ export const BasicCardText = styled.div`
       }
     }
     h3 {
-      width: 80%;
+      width: 100%;
       height: 90px;
       margin: 0.5% 0;
       padding: 0;
