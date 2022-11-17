@@ -37,7 +37,7 @@ export const MinCardContent = styled.div`
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 `
 
 export const MinCardText = styled.div`
@@ -58,7 +58,7 @@ export const MinCardText = styled.div`
       }
     }
     h3 {
-      width: 80%;
+      width: 100%;
       height: auto;
       margin: 0 2%;
       padding: 0;
