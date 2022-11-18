@@ -1,4 +1,4 @@
-App BlogPosts. React + Redux, saga.
+App BlogPosts. Typescript, React + Redux, saga.
 
  Using this App the User can
            Log In to the Website
