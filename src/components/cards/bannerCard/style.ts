@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {COLORS} from '../../../style';
+import {COLORS} from '../../../others/styles/style';
 
 export const BannerCardWrapper = styled.div`
   grid-area: banner;
@@ -112,11 +112,5 @@ export const CardImg = styled.div`
       }
 `
 
-export const IconsRow = styled.div`
-    width: 100%;
-    padding: 5% 2% 3%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-`
+
 

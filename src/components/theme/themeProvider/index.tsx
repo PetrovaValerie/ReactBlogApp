@@ -1,15 +1,8 @@
 import React, {createContext, Dispatch, ReactNode, useReducer} from "react";
-
-type PropsType = {
-    children: ReactNode,
-}
+import {ActionType, PropsType} from "../../../others/types/themeTypes";
 
 const initialStore = {
     darkMode: false,
-}
-
-type ActionType = {
-    type: string,
 }
 
 const themeReducer = (state: typeof initialStore, action: object & ActionType) => {

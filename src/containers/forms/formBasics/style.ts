@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {COLORS} from '../../../style';
+import {COLORS} from '../../../others/styles/style';
 
 export const Container = styled.div`
       margin: 0 auto;

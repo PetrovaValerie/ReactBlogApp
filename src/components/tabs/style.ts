@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {COLORS} from '../../style';
+import {COLORS} from '../../others/styles/style';
 import {TabList} from "react-tabs";
 import {NavLink} from "react-router-dom";
 

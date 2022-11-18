@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {COLORS} from '../../../../style';
+import {COLORS} from '../../../../others/styles/style';
 import {NavLink} from "react-router-dom";
 
 export const ConfirmText = styled.div`

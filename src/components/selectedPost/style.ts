@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {COLORS} from '../../style';
+import {COLORS} from '../../others/styles/style';
 import {NavLink} from "react-router-dom";
 
 export const Content = styled.div`
@@ -11,7 +11,7 @@ export const Content = styled.div`
  `
 
 export const NavWrap = styled.div`
-     width: 240px;
+     width: 280px;
      position: absolute;
      left:20%;
      top: 2%;

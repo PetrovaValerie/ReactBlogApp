@@ -4,19 +4,17 @@ import {TopWrap, BackBtn, WebTitle} from "../../../components/tabs/style";
 import {ThemeContext} from "../../../components/theme/themeProvider";
 import {SignInBtn} from "../formBasics/style";
 import {InputLine} from "../formBasics/input";
-
-type SignInFormProps = {
-    email: string,
-    password: string,
-}
+import {SignInFormProps} from "../../../others/types/formsTypes";
 
 export const SignInForm = () => {
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
+
     const [value, setValue] = useState<SignInFormProps>({
         email: '',
         password: ''
  });
+
     const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>): void => {
         event.preventDefault();
         setValue((prevState: SignInFormProps) => {

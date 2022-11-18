@@ -1,11 +1,10 @@
 import React, {useContext} from "react";
 import {Link} from "react-router-dom";
 import {ThemeContext} from "../../theme/themeProvider";
-import {useAppSelector} from "../../../redux/store";
-import "../../../App.css";
-import {BannerCardWrapper, CardText, CardContent, IconsRow, CardImg} from "./style";
-import {BookMark} from "../../cardElems/bookmark";
-import {Likes} from "../../cardElems/likeCount";
+import {useAppSelector} from "../../../others/redux/store";
+import "../../../others/styles/App.css";
+import {BannerCardWrapper, CardText, CardContent, CardImg} from "./style";
+import {CardIconsRow} from "../otherElems/iconsRow";
 
 
 export const BannerCard = () => {
@@ -30,11 +29,7 @@ export const BannerCard = () => {
                             <img src={e.image} alt={"post"}/>
                         </CardImg>
                     </CardContent>
-
-                    <IconsRow>
-                        <Likes />
-                        <BookMark id={e.id} />
-                    </IconsRow>
+                     <CardIconsRow id={e.id}/>
                 </BannerCardWrapper>
             )}
         </>

@@ -1,24 +1,12 @@
-import React, {ReactElement} from "react";
+import React, {FC} from "react";
 import {UserNameWrapper} from "./style";
+// import {userNameProps} from "../../../types/menuTypes";
 
-type userNameProps = {
-    userName: string;
-}
-
-export const UserName = (): ReactElement => {
-    // function toInitials({userName}: userNameProps) {
-    //     return userName
-    //         .split(' ')
-    //         .map(function(el) {
-    //             return el.slice(0, 1).toUpperCase() + '.';
-    //         })
-    //         .join('');
-    // }
+export const UserName = () => {
     return (
         <UserNameWrapper>
                 <span>VP</span>
                 <p>Valerie Petrova</p>
         </UserNameWrapper>
-    )
-}
+    )}
 
