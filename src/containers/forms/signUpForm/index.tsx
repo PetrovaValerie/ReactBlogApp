@@ -5,15 +5,11 @@ import {ThemeContext} from "../../../components/theme/themeProvider";
 import {SignUpBtn} from "../formBasics/style";
 import {InputLine} from "../formBasics/input";
 import {useDispatch} from "react-redux";
-import {signUpRequest} from "../../../redux/authReducer/action";
+import {signUpRequest} from "../../../others/redux/authReducer/action";
 import {SignUpError} from "./style";
+import {SignUpFormProps} from "../../../others/types/formsTypes";
 
-type SignUpFormProps = {
-    username: string,
-    email: string,
-    password: string,
-    confirmPassword: string,
-}
+
 
 export const SignUpForm = () => {
     const theme = useContext(ThemeContext);
@@ -30,6 +26,7 @@ export const SignUpForm = () => {
     useEffect(() => validatePassword());
 
     const dispatch = useDispatch();
+    // const
 
     //handleForm
     const dataForm = () => {
@@ -69,6 +66,7 @@ export const SignUpForm = () => {
                             placeholder={'Your name'}
                             value={value.username}
                             error
+                            // error={'username' in error}
                             onChange={handleChange}
                             aria-required="true" />
                         <InputLine

@@ -1,7 +1,6 @@
-import React, {FC} from "react";
-import {BaseRow} from "../basicCard/style";
-import {BasicCard} from "../basicCard";
-import {ArrProps} from "../../../../data/postArray";
+import React from "react";
+import {BaseRow} from "./style";
+import {BasicCard} from "./basicCardInner";
 
 export const BasicRow = () => {
     return (

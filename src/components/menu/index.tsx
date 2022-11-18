@@ -1,27 +1,14 @@
-import React, {ReactElement} from "react";
-import {SearchBar, SearchIcon, NavItem} from "./style";
-import {FaSearch} from 'react-icons/fa';
+import React from "react";
+import {NavItem} from "./style";
 import {UserName} from './userItem';
-import {Navbar} from "./navbar/navbar";
-import {Switcher} from "../theme/themeSwitcher";
+import {Navbar} from "./navbar";
+import {MainSearchBar} from "./searchBar";
 
-
-export const HeaderMenu = (): ReactElement => {
+export const HeaderMenu = () => {
     return (
-        <>
             <NavItem>
                 <Navbar/>
-                <SearchBar>
-                    <input placeholder = "Search.." />
-                    <SearchIcon>
-                        <FaSearch />
-                    </SearchIcon>
-                    <Switcher/>
-                </SearchBar>
-                <section>
-                    <UserName />
-                </section>
+                    <MainSearchBar />
+                <UserName />
             </NavItem>
-        </>
-    )
-};
+    )}

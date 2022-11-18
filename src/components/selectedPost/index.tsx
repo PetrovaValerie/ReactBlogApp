@@ -1,12 +1,10 @@
-import React, {FC} from "react";
+import React from "react";
 import {useParams} from "react-router-dom";
-import {PostArray, ArrProps} from "../../data/postArray";
 import {Content, NavWrap, HomeBtn, Title, Img, Description} from "./style";
-import {useAppSelector} from "../../redux/store";
-
+import {useAppSelector} from "../../others/redux/store";
 
 export const SelectedPost = () => {
-    const { title }  = useParams();
+    const {title}  = useParams();
     const postsArray = useAppSelector(state => state.postReducer.posts)
 
     return (

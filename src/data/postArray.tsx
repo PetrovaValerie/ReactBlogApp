@@ -1,5 +1,5 @@
 import React from 'react';
-import {PostTypes} from "../redux/blog/types/types";
+import {PostTypes} from "../others/types/reduxTypes/blogTypes";
 
 export type ArrProps = {
     count?: number,

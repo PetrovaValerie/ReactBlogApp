@@ -1,11 +1,9 @@
 import React, {useContext, useState} from "react";
-import {IconsRow} from "../../../cards/bannerCard/style";
-import {BookMark} from "../../../cardElems/bookmark";
 import {ThemeContext} from "../../../theme/themeProvider";
 import {FavContainer, FavWrap, FavImg, FavText} from "./style";
-import {useAppSelector} from "../../../../redux/store";
-import {Likes} from "../../../cardElems/likeCount";
+import {useAppSelector} from "../../../../others/redux/store";
 import {Link} from "react-router-dom";
+import {CardIconsRow} from "../../../cards/otherElems/iconsRow";
 
 export const FavoriteTab = () => {
     const theme = useContext(ThemeContext);
@@ -33,12 +31,7 @@ export const FavoriteTab = () => {
                                 </Link>
                             </FavText>
                         </FavWrap>
-
-                        <IconsRow>
-                            <Likes />
-                            <BookMark id={card.id} />
-                        </IconsRow>
-
+                        <CardIconsRow id={card.id}/>
                     </FavContainer>
                 )}
             </>

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {COLORS} from './../../../style';
+import {COLORS} from '../../../others/styles/style';
 
 export const UserNameWrapper = styled.div`
   width: 15%;
@@ -29,7 +29,6 @@ export const UserNameWrapper = styled.div`
         font-family: 'Inter', sans-serif;
         font-size: 16px;
         font-weight: 600;
-        //line-height: 34px;
         line-height: 20px;
       }
       p {

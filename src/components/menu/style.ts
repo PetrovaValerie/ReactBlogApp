@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {COLORS} from '../../style';
+import {COLORS} from '../../others/styles/style';
 
 export const NavItem = styled.div`
   padding:0;
@@ -10,9 +10,6 @@ export const NavItem = styled.div`
   justify-content: space-evenly;
   align-items: center;
   box-sizing: border-box;
-      section {
-        width: 15%;
-      }
 `
 
 export const SearchBar = styled.div`
