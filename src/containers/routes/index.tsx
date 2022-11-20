@@ -10,18 +10,19 @@ import {SelectedPost} from "../../components/selectedPost";
 import {ActivationRoute} from "../forms/route";
 
 export const MainRoute = () => {
+
     return (
-        <Routes>
-            <Route path='/' element = {<TabListing />} >
-                <Route index element = {<AllTabsWrap />} />
-                <Route path=':favorites' element = {<FavoriteTab />} />
-            </Route>
-            <Route path='/signUp' element = {<SignUpForm />} />
-            <Route path='/signIn' element = {<SignInForm />} />
-            <Route path='/success' element = {<RegConfirm />} />
-            <Route path="/post/:title" element={<SelectedPost />}/>
-            <Route path="/activate/:uid/:token" element={<ActivationRoute />}/>
-        </Routes>
+            <Routes>
+                <Route path='/' element = {<TabListing />} >
+                    <Route index element = {<AllTabsWrap />} />
+                    <Route path=':favorites' element = {<FavoriteTab />} />
+                </Route>
+                <Route path='/signUp' element = {<SignUpForm />} />
+                <Route path='/signIn' element = {<SignInForm />} />
+                <Route path='/success' element = {<RegConfirm />} />
+                <Route path="/post/:title" element={<SelectedPost />}/>
+                <Route path="/activate/:uid/:token" element={<ActivationRoute />}/>
+            </Routes>
     )}
 
 

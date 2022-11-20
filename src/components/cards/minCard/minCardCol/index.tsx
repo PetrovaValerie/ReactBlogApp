@@ -3,9 +3,9 @@ import {MiniatureCard} from "./minCardInner";
 import {MinCol} from "./style";
 
 export const MiniatureCol = () => {
+
     return (
-         <MinCol>
-             <MiniatureCard />
-        </MinCol>
-    )
-}
+             <MinCol>
+                 <MiniatureCard />
+            </MinCol>
+    )}

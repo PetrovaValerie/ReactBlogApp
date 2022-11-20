@@ -1,17 +1,13 @@
-import React, {useContext} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
 import {Ul} from "./style";
 import {UserName} from "../../../userItem";
-import "../../../../../others/styles/App.css";
-import {ThemeContext} from "../../../../theme/themeProvider";
 import {NavProps} from "../../../../../others/types/menuTypes";
+import {Switcher} from "../../../../theme/themeSwitcher";
 
 export const WebNav = ({open}: NavProps) => {
-    const theme = useContext(ThemeContext);
-    const darkMode = theme.state.darkMode;
-
     return (
-        <Ul open = {open} className = {`${darkMode ? "bg-dark" : "bg-light"}`}>
+        <Ul open = {open}>
             <li>
                 <UserName />
             </li>

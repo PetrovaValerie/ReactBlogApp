@@ -3,9 +3,6 @@ import {COLORS} from '../../../../others/styles/style';
 
 export const MinCol = styled.div`
   grid-area: min;
-      @media (max-width: 768px) {
-        display: none;
-      }
 `
 
 export const MinCardWrapper = styled.div`

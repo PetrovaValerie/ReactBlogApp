@@ -1,7 +1,7 @@
 import {AuthActions, SignUpError, SignUpSuccessPayload,
     SIGNUP_REQUEST,
     SIGNUP_SUCCESS,
-    SIGNUP_FAILURE,} from "../../types/reduxTypes/signUpTypes";
+    SIGNUP_FAILURE,} from "../../../types/reduxTypes/signUpTypes";
 
 
 type AuthState = {

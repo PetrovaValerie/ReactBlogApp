@@ -1,28 +1,24 @@
 import * as React from "react";
-import {ReactNode, useContext} from "react";
-import {ThemeContext} from "../../components/theme/themeProvider";
-import "../../others/styles/App.css";
 import {LayoutMain} from "./style";
-import {HeaderMenu} from "../../components/menu";
+import {HeaderMenu} from "../../components/navMenu";
 import {Footer} from "../../components/footer";
 import {LayoutProps} from "../../others/types/layoutTypes";
+import {MainStyle} from "../../others/styles/style"
+import {useThemeSelector} from "../../others/redux/store/rootReducer";
 
 export const Layout = ({children}: LayoutProps) => {
-    const theme = useContext(ThemeContext);
-    const darkMode = theme.state.darkMode;
 
+    const selectTheme = useThemeSelector(state => state.themeReducer);
     return (
             <>
-                <header className="AppHeader">
-                    <HeaderMenu  />
-                </header>
-                <LayoutMain className={`${darkMode ? "bg-dark" : "bg-light"}`}>
-                    {children}
-                </LayoutMain>
-                <Footer />
+                <MainStyle props={selectTheme} />
+                    <HeaderMenu />
+                    <LayoutMain>
+                        {children}
+                    </LayoutMain>
+                    <Footer />
             </>
-    )
-}
+    )}
 
 
 

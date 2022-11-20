@@ -5,7 +5,7 @@ import {
     SignUpError,
     SignUpPayload,
     SignUpSuccessPayload
-} from "../../types/reduxTypes/signUpTypes";
+} from "../../../types/reduxTypes/signUpTypes";
 
 export const signUpFailure = (payload: SignUpError) => ({
     type: SIGNUP_FAILURE,
