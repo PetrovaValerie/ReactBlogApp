@@ -14,7 +14,7 @@ export const NavItem = styled.div`
 `
 
 export const SearchBar = styled.div`
-  width: 63.5%;
+  width: 79%;
   display: flex;
       input {
         padding: 0 12%;

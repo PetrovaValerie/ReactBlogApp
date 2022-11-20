@@ -4,8 +4,9 @@ import {COLORS} from '../../../others/globalStyle/style';
 export const CheckBoxWrapper = styled.div`
   width: 5%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
+  margin-left: 1%;
 `
 
 export const IconWrap = styled.div<{stroke?: boolean}>`
