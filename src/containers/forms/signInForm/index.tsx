@@ -1,8 +1,8 @@
 import React, {useContext, useState} from 'react';
-import {Container, Form, Text, ForgotPassOption} from "../formBasics/style";
+import {Container, Form, Text, ForgotPassOption} from "./signInInput/style";
 import {TopWrap, BackBtn, WebTitle} from "../../../components/tabs/style";
-import {SignInBtn} from "../formBasics/style";
-import {InputLine} from "../formBasics/input";
+import {SignInBtn} from "./signInInput/style";
+import {InputLine} from "./signInInput/input";
 import {SignInFormProps} from "../../../others/types/formsTypes";
 
 export const SignInForm = () => {

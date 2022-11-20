@@ -1,26 +1,19 @@
 import React from "react";
 import {IconsRow} from "./style";
+import {Likes} from "./likeCount";
 import {BookMark} from "./bookmark";
-import {IdType} from "../../../../others/types/cardTypes";
-import {LikeCount} from "./style";
-import {AiOutlineDislike, AiOutlineLike} from "react-icons/ai";
-import {useAppSelector} from "../../../../others/redux/store/rootReducer";
 
-export const CardIconsRow = ({id}:IdType) => {
+export type IdType = {
+    id: number,
+    likesNumb: number
+}
 
-     const postsArray = useAppSelector(state => state.postReducer.posts);
+export const CardIconsRow = (props:IdType) => {
     return (
         <>
-            {postsArray.splice(postsArray.indexOf({id})).map((e) =>
             <IconsRow>
-                <LikeCount>
-                    <AiOutlineLike/>
-                    <div>{e.lesson_num}</div>
-                    <AiOutlineDislike/>
-                </LikeCount>
-
-                <BookMark id={id}/>
+                <Likes likesNumb={props.likesNumb}/>
+                <BookMark id={props.id}/>
             </IconsRow>
-             )}
         </>
     )}

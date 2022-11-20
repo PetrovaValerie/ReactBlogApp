@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {COLORS} from '../../../others/styles/style';
+import {COLORS} from '../../../others/globalStyle/style';
 
 export const BannerCardWrapper = styled.div`
   grid-area: banner;
@@ -72,7 +72,7 @@ export const CardText = styled.div`
       color: ${COLORS.secondary};
       cursor: pointer;
       :hover {
-        text-shadow: 4px 4px ${COLORS.lightContext};
+        text-shadow: 1px 1px ${COLORS.darkBg};
       }
       @media (max-width: 1340px) {
         font-size: 26px;

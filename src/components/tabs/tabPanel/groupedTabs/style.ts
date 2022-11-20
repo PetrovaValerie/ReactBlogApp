@@ -1,22 +1,42 @@
 import styled from 'styled-components';
-import {COLORS} from '../../../../others/styles/style';
+import {COLORS} from '../../../../others/globalStyle/style';
 
-export const FavContainer = styled.div`
+export const GroupedTitle = styled.h2`
+  padding: 2% 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 30px;
+  color: ${COLORS.darkBg};
+  cursor: pointer;
+`
+
+export const GroupedCards = styled.div`
       margin: 3% auto;
-      width: 80%;
+      width: 100%;
       display: flex;
       flex-direction: column;
+      border-bottom: 1px solid ${COLORS.darkBg};
 `
 
-export const FavWrap = styled.div`
+export const GroupedWrap = styled.div`
       display: flex;
 `
 
-export const FavImg = styled.img`
-      width: 20%;
+export const GroupedImg = styled.div`
+  width: 20%;
+  img {
+    float: right;
+    width: 90%;
+    display: block;
+    cursor: pointer;
+    :hover{
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
 `
 
-export const FavText = styled.div`
+export const GroupedText = styled.div`
       width: 80%;
       padding: 0.5% 3%;
       display: flex;
@@ -41,8 +61,7 @@ export const FavText = styled.div`
             }
           }
           h2 {
-            width: 80%;
-            //height: 90px;
+            width: 100%;
             margin: 0.5%;
             padding: 0;
             font-family: 'Inter', sans-serif;
@@ -52,7 +71,7 @@ export const FavText = styled.div`
             cursor: pointer;
             overflow: hidden;
             :hover {
-              text-shadow: 4px 4px ${COLORS.lightContext};
+              text-shadow: 1px 1px ${COLORS.darkBg};
             }
             @media (max-width: 1340px) {
               font-size: 17px;

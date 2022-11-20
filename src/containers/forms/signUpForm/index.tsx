@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {Container, Form, Text} from "../formBasics/style";
+import {Container, Form, Text} from "../signInForm/signInInput/style";
 import {TopWrap, BackBtn, WebTitle} from "../../../components/tabs/style";
-import {SignUpBtn} from "../formBasics/style";
-import {InputLine} from "../formBasics/input";
+import {SignUpBtn} from "../signInForm/signInInput/style";
+import {InputLine} from "../signInForm/signInInput/input";
 import {useDispatch} from "react-redux";
 import {signUpRequest} from "../../../others/redux/store/authReducer/action";
 import {SignUpError} from "./style";
 import {SignUpFormProps} from "../../../others/types/formsTypes";
+import {useAuthSelector} from "../../../others/redux/store/rootReducer";
 
 export const SignUpForm = () => {
 
@@ -21,7 +22,8 @@ export const SignUpForm = () => {
     useEffect(() => validatePassword());
 
     const dispatch = useDispatch();
-    // const
+    // const error = useAuthSelector(state => state.authReducer.error)
+    // console.log('email' in error);
 
     //handleForm
     const dataForm = () => {
@@ -70,6 +72,7 @@ export const SignUpForm = () => {
                         placeholder={'Your email'}
                         value={value.email}
                         error
+                        // error={'email' in error}
                         onChange={handleChange}
                         aria-required="true" />
                     <InputLine
@@ -79,6 +82,7 @@ export const SignUpForm = () => {
                         placeholder={'Your password'}
                         value={value.password}
                         error
+                        // error={'password' in error}
                         onChange={handleChange}
                         aria-required="true" />
                     <InputLine
@@ -88,6 +92,7 @@ export const SignUpForm = () => {
                         placeholder={'Confirm password'}
                         value={value.confirmPassword}
                         error
+                        // error={'confirmPassword' in error}
                         onChange={handleChange}
                         aria-required={true} />
                     {/*// aria-invalid={passMatch ? true : false} */}

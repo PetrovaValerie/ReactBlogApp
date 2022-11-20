@@ -1,4 +1,9 @@
 import React from "react";
+import {authReducer, AuthState} from "../../redux/store/authReducer/authReducer"
+
+export type authReducerType = {
+    authReducer: AuthState
+}
 
 export type InputProps = {
     label: string,
@@ -21,3 +26,4 @@ export type SignUpFormProps = {
     password: string,
     confirmPassword: string,
 }
+

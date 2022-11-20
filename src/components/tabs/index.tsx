@@ -2,7 +2,7 @@ import React from "react";
 import {TopWrap, WebTitle, AllTabs, Loader} from "./style";
 import {Tabs, TabPanel} from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import {TabCategories} from "./tabCategories";
+import {TabCategories} from "./tabNames";
 import {fetchPosts} from "../../data/dataFunc";
 import {Outlet} from "react-router-dom";
 

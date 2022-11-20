@@ -3,7 +3,7 @@ import {LayoutMain} from "./style";
 import {HeaderMenu} from "../../components/navMenu";
 import {Footer} from "../../components/footer";
 import {LayoutProps} from "../../others/types/layoutTypes";
-import {MainStyle} from "../../others/styles/style"
+import {MainStyle} from "../../others/globalStyle/style"
 import {useThemeSelector} from "../../others/redux/store/rootReducer";
 
 export const Layout = ({children}: LayoutProps) => {

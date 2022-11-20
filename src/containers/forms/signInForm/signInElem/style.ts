@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {COLORS} from '../../../../others/styles/style';
+import {COLORS} from '../../../../others/globalStyle/style';
 
 
 export const TitleWrap = styled.div`

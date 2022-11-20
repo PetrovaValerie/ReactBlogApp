@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Form} from "../../formBasics/style";
+import {Container, Form} from "../../signInForm/signInInput/style";
 import {TopWrap, BackBtn, WebTitle} from "../../../../components/tabs/style";
 import {ConfirmText, SuccessButton} from "./style";
 

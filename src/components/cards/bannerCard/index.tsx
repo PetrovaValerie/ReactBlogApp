@@ -1,11 +1,10 @@
-import React, {FC} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
 import {useAppSelector} from "../../../others/redux/store/rootReducer";
 import {BannerCardWrapper, CardText, CardContent, CardImg} from "./style";
 import {CardIconsRow} from "../otherElems/iconsRow";
-import {IconsRowProp} from "../../../others/types/cardTypes";
 
-export const BannerCard:FC<IconsRowProp> = ({id, lesson_num}) => {
+export const BannerCard = () => {
 
     const postsArray = useAppSelector(state => state.postReducer.posts);
     return (
@@ -17,16 +16,20 @@ export const BannerCard:FC<IconsRowProp> = ({id, lesson_num}) => {
                                 <span>{e.date}</span>
                                 <Link to = {`/post/${e.title}`}
                                       onClick = {() => window.scrollTo(0, 0)}>
-                                    <h2>{e.title}</h2>
+                                    <h2>
+                                        {e.title}
+                                    </h2>
                                 </Link>
                                 <p>{e.text}</p>
                             </CardText>
                             <CardImg>
-                                <img src={e.image} alt={"post"}/>
+                                <Link to = {`/post/${e.title}`}
+                                      onClick = {() => window.scrollTo(0, 0)}>
+                                    <img src={e.image} alt={"post"}/>
+                                </Link>
                             </CardImg>
                         </CardContent>
-                        <CardIconsRow id={e.id}
-                                      lesson_num={e.lesson_num}/>
+                        <CardIconsRow likesNumb={e.lesson_num} id={e.id}/>
                     </BannerCardWrapper>
                 )}
             </>

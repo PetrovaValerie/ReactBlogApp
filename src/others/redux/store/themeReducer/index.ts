@@ -1,5 +1,5 @@
 import {ActionThemeType, StateType} from "../../../types/themeTypes";
-import {COLORS} from "../../../styles/style";
+import {COLORS} from "../../../globalStyle/style";
 
 const defaultState: StateType = {
     background: "#fff",

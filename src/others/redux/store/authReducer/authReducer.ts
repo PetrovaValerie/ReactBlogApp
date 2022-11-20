@@ -4,13 +4,13 @@ import {AuthActions, SignUpError, SignUpSuccessPayload,
     SIGNUP_FAILURE,} from "../../../types/reduxTypes/signUpTypes";
 
 
-type AuthState = {
+export type AuthState = {
     user: SignUpSuccessPayload | null
     error: SignUpError | null,
     // pending: boolean,
 }
 
-const initialState: AuthState = {
+export const initialState: AuthState = {
     user: null,
     error: null,
     // pending: false,

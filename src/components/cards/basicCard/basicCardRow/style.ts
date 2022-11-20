@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {COLORS} from '../../../../others/styles/style';
+import {COLORS} from '../../../../others/globalStyle/style';
 
 export const BaseRow = styled.div`
   grid-area: basic;
@@ -7,7 +7,7 @@ export const BaseRow = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
-  
+  grid-column-gap: 15px;
     @media (max-width: 320px) {
       grid-template-rows: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr;
@@ -82,7 +82,7 @@ export const BasicCardText = styled.div`
       cursor: pointer;
       overflow: hidden;
       :hover {
-        text-shadow: 4px 4px ${COLORS.lightContext};
+        text-shadow: 1px 1px ${COLORS.darkBg};
       }
         @media (max-width: 1340px) {
         font-size: 17px;
