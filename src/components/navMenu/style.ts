@@ -10,10 +10,11 @@ export const NavItem = styled.div`
   justify-content: space-evenly;
   align-items: center;
   box-sizing: border-box;
+  background-color: #2231AA;
 `
 
 export const SearchBar = styled.div`
-  width: 68.5%;
+  width: 63.5%;
   display: flex;
       input {
         padding: 0 12%;

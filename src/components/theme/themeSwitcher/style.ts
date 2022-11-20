@@ -2,9 +2,11 @@ import styled from 'styled-components';
 import {COLORS} from '../../../others/styles/style';
 
 export const CheckBoxWrapper = styled.div`
-  position: relative;
-  top: 15px;
-  left: 20px;
+  width: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  
 `
 
 export const CheckBoxLabel = styled.label`
@@ -16,17 +18,6 @@ export const CheckBoxLabel = styled.label`
   border-radius: 15px;
   background: #bebebe;
   cursor: pointer;
-  &::after {
-    content: "";
-    display: block;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    margin: 3px;
-    background: #ffffff;
-    box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
-    transition: 0.2s;
-  }
 `
 
 export const CheckBox = styled.input`
@@ -35,16 +26,20 @@ export const CheckBox = styled.input`
   border-radius: 15px;
   width: 42px;
   height: 26px;
-  &:checked + ${CheckBoxLabel} {
-    background: #4fbe79;
-    &::after {
-      content: "";
-      display: block;
-      border-radius: 50%;
-      width: 18px;
-      height: 18px;
-      margin-left: 21px;
-      transition: 0.2s;
-    }
+`
+export const IconWrap = styled.div<{stroke?: boolean}>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+  
+  & svg:nth-child(1) {
+    stroke: ${props => props.stroke ? `${COLORS.mediumBg}` : `black`};
+  } 
+
+  &:first-of-type {
+    border-right: 1px solid #bdbdbd;
   }
 `

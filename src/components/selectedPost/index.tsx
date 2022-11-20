@@ -1,12 +1,12 @@
 import React from "react";
 import {useParams} from "react-router-dom";
 import {Content, NavWrap, HomeBtn, Title, Img, Description} from "./style";
-import {useAppSelector} from "../../others/redux/store";
+import {useAppSelector} from "../../others/redux/store/rootReducer";
 
 export const SelectedPost = () => {
+
     const {title}  = useParams();
     const postsArray = useAppSelector(state => state.postReducer.posts)
-
     return (
             <>
                 {postsArray.filter( (e) => e.title === title).map((e) => (

@@ -1,25 +1,35 @@
-import React, {useContext} from "react";
-import {CheckBoxLabel, CheckBoxWrapper, CheckBox} from "./style"
-import {ThemeContext} from "../themeProvider";
+import React, {useState} from "react";
+import {CheckBoxWrapper, IconWrap} from "./style"
+import {useDispatch} from "react-redux";
+import {LightIcon, DarkIcon} from "./icons";
 
 export const Switcher = () => {
-    const theme = useContext(ThemeContext);
-    const handleClick = () => {
-        console.log('click')
-        theme.state.darkMode ?
-            theme.dispatch({type: "LIGHTMODE"})
-            : theme.dispatch({type: "DARKMODE"})
+
+    const [state, setState] = useState(true);
+    const dispatch = useDispatch();
+
+    const selectLightTheme = () => {
+        dispatch({type:"LIGHT_THEME"})
     }
-            return (
-                <div>
-                    <CheckBoxWrapper>
-                        <CheckBox
-                            id="checkbox"
-                            type="checkbox"
-                            onClick={handleClick}/>
-                        <CheckBoxLabel htmlFor="checkbox" />
-                    </CheckBoxWrapper>
-                </div>
-            )
-        }
+
+    const selectDarkTheme = () => {
+        dispatch({type:"DARK_THEME"})
+    }
+    return (
+            <CheckBoxWrapper>
+                <IconWrap
+                    onClick={() => {
+                        setState(true)
+                        !state && selectLightTheme()}}
+                    stroke={!state}><LightIcon/>
+                </IconWrap>
+
+                <IconWrap
+                    onClick={() => {
+                        setState(false)
+                        state && selectDarkTheme()}}
+                    stroke={state}><DarkIcon/>
+                </IconWrap>
+            </CheckBoxWrapper>
+    )}
 

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useAppSelector} from "../others/redux/store";
+import {useAppSelector} from "../others/redux/store/rootReducer";
 
 export const switchToFavouriteHook = (id: number) => {
 

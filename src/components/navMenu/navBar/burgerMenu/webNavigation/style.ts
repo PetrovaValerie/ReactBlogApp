@@ -24,7 +24,7 @@ export const Ul = styled.ul<{ open: boolean }>`
         align-items: center;
         cursor: pointer;
         z-index: 100;
-        background-color: ${COLORS.whiteContext};
+        background-color: transparent;
         font-family: 'Inter', sans-serif;
         font-size: 16px;
         line-height: 24px;
@@ -32,7 +32,7 @@ export const Ul = styled.ul<{ open: boolean }>`
         color: ${COLORS.secondary};
         border-bottom: 1px solid ${COLORS.mediumBg};
           :first-child {
-            margin-top: 14px;
+            margin-top: 10px;
           }                
           :nth-child(2) {
             margin-top: 5px;

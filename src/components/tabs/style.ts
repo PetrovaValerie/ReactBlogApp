@@ -49,17 +49,21 @@ export const WebTitle = styled.h1`
 export const PrimaryTabListing = styled(TabList)`
     display: flex;
     outline: none;
+    justify-content:flex-start;
+    border-bottom: 1px solid ${COLORS.darkBg};
+    padding: 0 0 1.2px;
 `
 
 export const TabText = styled.div`
     padding: 20px 40px 25px;
-    margin-bottom: -5px;
+    margin-bottom: -8px;
+    //margin: 0 auto;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 24px;
     font-weight: 600;
     outline: none;
-    border-bottom: 1px solid transparent;
+     border-bottom: 1px solid transparent;
       :hover {
         border-bottom: 1px solid ${COLORS.secondary};
       }
