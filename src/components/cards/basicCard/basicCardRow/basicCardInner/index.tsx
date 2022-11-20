@@ -12,15 +12,21 @@ export const BasicCard = () => {
                 {postsArray.slice(7, 13).map((e) =>
                     <BasicCardWrapper key={e.id}>
                         <BasicCardImg>
-                            <img src={e.image} alt={"post"}/>
+                            <Link to={`/post/${e.title}`}
+                                  onClick={() => window.scrollTo(0, 0)}>
+                                <img src={e.image} alt={"post"}/>
+                            </Link>
                         </BasicCardImg>
                         <BasicCardText>
                             <span>{e.date}</span>
-                            <Link to={`/post/${e.title}`} onClick={() => window.scrollTo(0, 0)}>
-                                <h3>{e.title}</h3>
+                            <Link to={`/post/${e.title}`}
+                                  onClick={() => window.scrollTo(0, 0)}>
+                                <h3>
+                                    {e.title}
+                                </h3>
                             </Link>
                         </BasicCardText>
-                        <CardIconsRow id={e.id}/>
+                        <CardIconsRow likesNumb={e.lesson_num} id={e.id}/>
                     </BasicCardWrapper>
                 )}
             </>

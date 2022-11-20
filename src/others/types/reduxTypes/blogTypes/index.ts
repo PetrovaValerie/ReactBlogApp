@@ -6,7 +6,7 @@ export type PostTypes = {
     title?: string,
     text?: string,
     date?: string,
-    lesson_num?: number,
+    lesson_num: number,
     author?: number,
     // favourite?: boolean,
 }
@@ -15,15 +15,15 @@ export type ActionPostType = {
     type: ACTION_POST_TYPES,
     payload: {
         posts?: PostTypes[],
-        id: number[],
+        idFav?: number[],
     }
 }
 
 export type postsStateType = {
     posts: PostTypes[],
-    id: number[],
+    idFav: number[],
 }
 
-export type mainReducerType = {
-    postReducer: postsStateType,
+export type postReducerType = {
+    postReducer: postsStateType
 }

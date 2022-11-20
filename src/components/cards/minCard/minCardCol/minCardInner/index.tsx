@@ -3,6 +3,9 @@ import {Link} from "react-router-dom";
 import {MinCardWrapper, MinCardContent, MinCardImg, MinCardText} from "../style";
 import {useAppSelector} from "../../../../../others/redux/store/rootReducer";
 import {CardIconsRow} from "../../../otherElems/iconsRow";
+import {IconsRow, LikeCount} from "../../../otherElems/iconsRow/style";
+import {AiOutlineDislike, AiOutlineLike} from "react-icons/ai";
+import {BookMark} from "../../../otherElems/iconsRow/bookmark";
 
 export const MiniatureCard = () => {
 
@@ -14,15 +17,21 @@ export const MiniatureCard = () => {
                         <MinCardContent>
                             <MinCardText>
                                 <span>{e.date}</span>
-                                <Link to={`/post/${e.title}`} onClick={() => window.scrollTo(0, 0)}>
-                                    <h3>{e.title}</h3>
+                                <Link to={`/post/${e.title}`}
+                                      onClick={() => window.scrollTo(0, 0)}>
+                                    <h3>
+                                        {e.title}
+                                    </h3>
                                 </Link>
                             </MinCardText>
                             <MinCardImg>
-                                <img src={e.image} alt={"post"}/>
+                                <Link to={`/post/${e.title}`}
+                                      onClick={() => window.scrollTo(0, 0)}>
+                                     <img src={e.image} alt={"post"}/>
+                                </Link>
                             </MinCardImg>
                         </MinCardContent>
-                        <CardIconsRow id={e.id}/>
+                        <CardIconsRow likesNumb={e.lesson_num} id={e.id}/>
                     </MinCardWrapper>
                 )}
             </>

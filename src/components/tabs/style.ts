@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {COLORS} from '../../others/styles/style';
+import {COLORS} from '../../others/globalStyle/style';
 import {TabList} from "react-tabs";
 import {NavLink} from "react-router-dom";
 
@@ -57,15 +57,15 @@ export const PrimaryTabListing = styled(TabList)`
 export const TabText = styled.div`
     padding: 20px 40px 25px;
     margin-bottom: -8px;
-    //margin: 0 auto;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 24px;
     font-weight: 600;
     outline: none;
-     border-bottom: 1px solid transparent;
+    border-bottom: 3px solid transparent;
+    position: relative;
       :hover {
-        border-bottom: 1px solid ${COLORS.secondary};
+        color: ${COLORS.darkBg};
       }
       @media (max-width: 1340px) {
         padding: 10px 30px 15px;
@@ -74,11 +74,17 @@ export const TabText = styled.div`
       }
 `
 
+export const TabSelected = styled.u`
+      position: absolute;
+      width: 110%;
+      left: -5%;
+      bottom: -3px;
+`
+
 export const AllTabs = styled.div`
       width: 70%;
       margin: 1% auto 0;
       padding: 0 2% 0.5%;
-      background-color: rgba(255, 255, 255, 0.65);
           h1 {
             max-height: 80px;
             font-family: 'Inter', sans-serif;
@@ -113,7 +119,7 @@ export const Loader = styled.div`
       position: relative;
       width: 100px;
       height: 100px;
-          :before , :after{
+          ::before , ::after{
             content: '';
             border-radius: 50%;
             position: absolute;

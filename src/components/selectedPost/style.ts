@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import {COLORS} from '../../others/styles/style';
+import {COLORS} from '../../others/globalStyle/style';
 import {NavLink} from "react-router-dom";
 
-export const Content = styled.div`
+export const SelectedPostWrap = styled.div`
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@ export const Content = styled.div`
     position: relative;
  `
 
-export const NavWrap = styled.div`
+export const SelectedNav = styled.div`
      width: 280px;
      position: absolute;
      left:20%;
@@ -41,7 +41,7 @@ export const HomeBtn = styled(NavLink)`
     }
  `
 
-export const Title = styled.h2`
+export const SelectedTitle = styled.h2`
     max-width: 50%;
     margin: 10% 0 1%;
     font-family: 'Inter', sans-serif;
@@ -53,7 +53,7 @@ export const Title = styled.h2`
     cursor: pointer;
  `
 
-export const Img = styled.img`
+export const SelectedImg = styled.img`
    display: block;
    max-width: 50%;
    max-height: 600px;
@@ -61,7 +61,7 @@ export const Img = styled.img`
    cursor: pointer;
  `
 
-export const Description = styled.p`
+export const SelectedDesc = styled.p`
     max-width: 50%;
     padding: 1.5%;
     font-family: 'Inter', sans-serif;
@@ -71,6 +71,50 @@ export const Description = styled.p`
     color: ${COLORS.secondary};
  `
 
+export const SelectedIcons = styled.div`
+     margin: 2% auto;
+     width: 48%;
+     display: flex;
+     justify-content: space-between;
+ `
+
+export const SelectedLikes = styled.div`
+      width: 200px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      background: ${COLORS.whiteContext};
+       :nth-child(n) {
+        width: 88px;
+        height: 56px;
+        background: ${COLORS.lightContext};
+        font-family: 'Malgun Gothic', sans-serif;
+        color: ${COLORS.secondary};
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+ `
+
+export const SelectedBookmark = styled.button`
+     width: 237px;
+     height: 56px;
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     background: ${COLORS.lightContext};
+     border: none;
+     cursor: pointer;
+ 
+        p {
+         font-family: 'Inter', sans-serif;
+         font-size: 18px;
+         line-height: 24px;
+         font-weight: 600;
+         color: ${COLORS.secondary};
+         background: ${COLORS.lightContext};
+        }
+ `
 
 
 

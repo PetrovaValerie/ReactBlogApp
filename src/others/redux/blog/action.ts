@@ -2,7 +2,8 @@ import {PostTypes} from "../../types/reduxTypes/blogTypes";
 
 export enum ACTION_POST_TYPES {
     ADD_POSTS = "ADD_POSTS",
-    TOGGLE_FAVOURITE = "TOGGLE_FAVOURITE",
+    TOGGLE_FAVORITE = "TOGGLE_FAVORITE",
+
 }
 
 export const addPosts = (postsArray: PostTypes[]) => ({
@@ -12,9 +13,9 @@ export const addPosts = (postsArray: PostTypes[]) => ({
     }
 })
 
-export const toggleFavorite = (id: number) => ({
-    type: ACTION_POST_TYPES.TOGGLE_FAVOURITE,
+export const toggleFavorite = (favArr: number[]) => ({
+    type: ACTION_POST_TYPES.TOGGLE_FAVORITE,
     payload: {
-        id
+        idFav: favArr,
     }
 })

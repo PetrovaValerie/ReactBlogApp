@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Input, InputTitle, ErrorSpan} from "./style";
-import {InputProps} from "../../../others/types/formsTypes";
+import {InputProps} from "../../../../others/types/formsTypes";
 
 export const InputLine = (props: InputProps) => {
     const [error, setError] = useState(false);

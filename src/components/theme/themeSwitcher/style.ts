@@ -1,32 +1,13 @@
 import styled from 'styled-components';
-import {COLORS} from '../../../others/styles/style';
+import {COLORS} from '../../../others/globalStyle/style';
 
 export const CheckBoxWrapper = styled.div`
   width: 5%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  
+  align-items: center;
 `
 
-export const CheckBoxLabel = styled.label`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 42px;
-  height: 26px;
-  border-radius: 15px;
-  background: #bebebe;
-  cursor: pointer;
-`
-
-export const CheckBox = styled.input`
-  opacity: 0;
-  z-index: 1;
-  border-radius: 15px;
-  width: 42px;
-  height: 26px;
-`
 export const IconWrap = styled.div<{stroke?: boolean}>`
   display: flex;
   justify-content: center;
@@ -34,12 +15,13 @@ export const IconWrap = styled.div<{stroke?: boolean}>`
   width: 50%;
   height: 100%;
   cursor: pointer;
+  color: black;
   
-  & svg:nth-child(1) {
-    stroke: ${props => props.stroke ? `${COLORS.mediumBg}` : `black`};
+  & svg:nth-child(n) {
+    stroke: ${props => props.stroke ? `${COLORS.whiteContext}` : `black`};
   } 
 
   &:first-of-type {
-    border-right: 1px solid #bdbdbd;
+    border-right: 1px solid ${COLORS.whiteContext};
   }
 `

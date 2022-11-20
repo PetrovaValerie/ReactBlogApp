@@ -1,35 +1,42 @@
 import React from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import {Tab, TabList} from "react-tabs";
-import {PrimaryTabListing, TabText} from "../style";
+import {PrimaryTabListing, TabText, TabSelected} from "../style";
 
 export const TabCategories = () => {
-    const params = useParams();
-    const paramsTab = Object.values(params)[0];
 
+    const pathName = window.location.pathname;
     const navigate = useNavigate();
+
     const allPostsTab = () => {
         navigate('/')
     }
     const favouritePostsTab = () => {
-        navigate('/favourites')
+        navigate('/favorites')
     }
+    const popularPostsTab = () => {
+        navigate('/popular')
+    }
+
     return (
         <TabList>
             <PrimaryTabListing>
                 <Tab onClick={allPostsTab}>
                     <TabText>
                         All
+                        {pathName === '/' ? <TabSelected /> : null}
                     </TabText>
                 </Tab>
                 <Tab onClick={favouritePostsTab}>
                     <TabText>
                         My favorites
+                        {pathName === '/favorites' ? <TabSelected /> : null}
                     </TabText>
                 </Tab>
-                <Tab>
+                <Tab onClick={popularPostsTab}>
                     <TabText>
                         Popular
+                        {pathName === '/popular'? <TabSelected /> : null}
                     </TabText>
                 </Tab>
             </PrimaryTabListing>
