@@ -5,7 +5,8 @@ import {SearchSvg} from "./searchBarIcon";
 export const MainSearchBar = () => {
     return (
         <SearchBar>
-            <input placeholder = "Search.." />
+            <input  autoComplete={"searching-results"}
+                    placeholder = "Search.." />
             <SearchIcon>
                 <SearchSvg />
             </SearchIcon>

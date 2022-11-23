@@ -12,6 +12,7 @@ export type InputProps = {
     placeholder: string,
     value: string,
     error: boolean,
+    autoComplete: string,
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
 }
 

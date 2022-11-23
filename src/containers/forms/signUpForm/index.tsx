@@ -63,6 +63,7 @@ export const SignUpForm = () => {
                         value={value.username}
                         error
                         // error={'username' in error}
+                        autoComplete={"current-password"}
                         onChange={handleChange}
                         aria-required="true" />
                     <InputLine
@@ -73,6 +74,7 @@ export const SignUpForm = () => {
                         value={value.email}
                         error
                         // error={'email' in error}
+                        autoComplete={"current-password"}
                         onChange={handleChange}
                         aria-required="true" />
                     <InputLine
@@ -83,6 +85,7 @@ export const SignUpForm = () => {
                         value={value.password}
                         error
                         // error={'password' in error}
+                        autoComplete={"current-password"}
                         onChange={handleChange}
                         aria-required="true" />
                     <InputLine
@@ -93,6 +96,7 @@ export const SignUpForm = () => {
                         value={value.confirmPassword}
                         error
                         // error={'confirmPassword' in error}
+                        autoComplete={"current-password"}
                         onChange={handleChange}
                         aria-required={true} />
                     {/*// aria-invalid={passMatch ? true : false} */}

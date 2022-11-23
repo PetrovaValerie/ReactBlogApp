@@ -2,8 +2,6 @@ import { put, call, takeEvery } from 'redux-saga/effects'
 import { PayloadAction } from '@reduxjs/toolkit'
 import {signInFailure, signInSuccess} from "../redux/store/authReducer/action";
 import {SIGNIN_REQUEST, SignInError, SignInPayload, SignInSuccessPayload} from "../types/reduxTypes/signInTypes";
-// import {getProfile} from "../services/loginService";
-
 
 const signInRequest = async (
     payload: SignInPayload

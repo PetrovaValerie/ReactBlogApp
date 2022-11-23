@@ -18,6 +18,7 @@ export const InputLine = (props: InputProps) => {
                     name={props.name}
                     onChange={props.onChange}
                     onBlur={validateValue}
+                    autoComplete={"current-password"}
                     error={error && props.error} />
                 {error && <ErrorSpan>Please, try again</ErrorSpan>}
             </>
