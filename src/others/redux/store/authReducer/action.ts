@@ -6,6 +6,7 @@ import {
     SignUpPayload,
     SignUpSuccessPayload
 } from "../../../types/reduxTypes/signUpTypes";
+
 import {
     REGISTER_FAILURE, REGISTER_SUCCESS,
     SIGNIN_REQUEST, SignInError,
@@ -42,8 +43,3 @@ export const signInFailure = (payload: SignInError) => ({
     type: REGISTER_SUCCESS,
     payload: payload
 });
-
-// export const signInRequest = (payload: SignInPayload) => ({
-//     type: SIGNIN_REQUEST,
-//     payload: payload
-// })

@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useState} from 'react';
 import {Container, Form, Text, ForgotPassOption} from "./signInInput/style";
 import {TopWrap, BackBtn, WebTitle} from "../../../components/tabs/style";
 import {SignInBtn} from "./signInInput/style";
@@ -56,6 +56,7 @@ export const SignInForm = () => {
                         value={value.email}
                         onChange={handleSubmit}
                         error
+                        autoComplete={"current-password"}
                     />
                     <InputLine
                         label={"Password"}
@@ -65,6 +66,7 @@ export const SignInForm = () => {
                         value={value.password}
                         onChange={handleSubmit}
                         error
+                        autoComplete={"current-password"}
                     />
                     <ForgotPassOption>Forgot password?</ForgotPassOption>
                     {/*<SignInBtn onClick={handleSubmit}>*/}
