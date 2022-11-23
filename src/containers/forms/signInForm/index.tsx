@@ -4,13 +4,17 @@ import {TopWrap, BackBtn, WebTitle} from "../../../components/tabs/style";
 import {SignInBtn} from "./signInInput/style";
 import {InputLine} from "./signInInput/input";
 import {SignInFormProps} from "../../../others/types/formsTypes";
+import {useDispatch} from "react-redux";
+import {signInRequest} from "../../../others/redux/store/authReducer/action";
 
 export const SignInForm = () => {
+
 
     const [value, setValue] = useState<SignInFormProps>({
         email: '',
         password: ''
     });
+
 
     const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>): void => {
         event.preventDefault();
@@ -22,6 +26,16 @@ export const SignInForm = () => {
                 })
         })
     }
+    const dispatch = useDispatch();
+
+    const DataForm = () => {
+        console.log(value)
+        const isValid= true;
+        if (isValid) {
+            dispatch(signInRequest(value))
+        }
+    }
+
     return (
         <>
             <TopWrap>
@@ -53,7 +67,8 @@ export const SignInForm = () => {
                         error
                     />
                     <ForgotPassOption>Forgot password?</ForgotPassOption>
-                    <SignInBtn>
+                    {/*<SignInBtn onClick={handleSubmit}>*/}
+                    <SignInBtn onClick={DataForm} >
                         Sign in
                     </SignInBtn>
                     <Text>Don't have an account? <a>Sign Up</a></Text>
