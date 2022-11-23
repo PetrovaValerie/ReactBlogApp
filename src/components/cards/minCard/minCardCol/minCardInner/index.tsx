@@ -19,9 +19,9 @@ export const MiniatureCard = () => {
                                 <span>{e.date}</span>
                                 <Link to={`/post/${e.title}`}
                                       onClick={() => window.scrollTo(0, 0)}>
-                                    <h3>
+                                    <h2>
                                         {e.title}
-                                    </h3>
+                                    </h2>
                                 </Link>
                             </MinCardText>
                             <MinCardImg>

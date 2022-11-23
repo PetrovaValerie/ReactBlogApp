@@ -38,13 +38,14 @@ export const MainStyle = createGlobalStyle<{ props: StateType }>`
         color: ${({props}) => props.color};
       }
       
-        main p,
+        //main p,
         main h1,
         main h2,
-        main h3,
+        //main h3,
         .react-tabs>div,
         ul>li>a,
-        ul>li {
+        ul>li 
+        {
         background: ${({props}) => props.background};
         color: ${({props}) => props.color};
       }
@@ -53,6 +54,8 @@ export const MainStyle = createGlobalStyle<{ props: StateType }>`
         fill: ${({props}) => props.color};
       }
       
+      main p,
+      //main h3,
       div:nth-child(n),
       a:visited {
         color: ${({props}) => props.color};

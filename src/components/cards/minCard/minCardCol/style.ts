@@ -54,7 +54,7 @@ export const MinCardText = styled.div`
           line-height: 20px;
       }
     }
-    h3 {
+    h2 {
       width: 100%;
       height: auto;
       margin: 0 2%;
