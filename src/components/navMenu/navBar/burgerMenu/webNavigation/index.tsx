@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 import {Ul} from "./style";
 import {UserName} from "../../../userItem";
 import {NavProps} from "../../../../../others/types/menuTypes";
-import {Switcher} from "../../../../theme/themeSwitcher";
 
 export const WebNav = ({open}: NavProps) => {
     return (
@@ -22,7 +21,9 @@ export const WebNav = ({open}: NavProps) => {
                 </Link>
             </li>
             <li>
-                <div>Add Post</div>
+                <Link to="/addPost">
+                    Add New Post
+                </Link>
             </li>
             <li>
                 <Link to="/signIn">

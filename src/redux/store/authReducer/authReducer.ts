@@ -1,8 +1,8 @@
 import {AuthActions, SignUpError, SignUpSuccessPayload,
     SIGNUP_REQUEST,
     SIGNUP_SUCCESS,
-    SIGNUP_FAILURE,} from "../../../types/reduxTypes/signUpTypes";
-import {REGISTER_FAILURE, REGISTER_SUCCESS} from "../../../types/reduxTypes/signInTypes";
+    SIGNUP_FAILURE,} from "../../../others/types/reduxTypes/signUpTypes";
+import {REGISTER_FAILURE, REGISTER_SUCCESS} from "../../../others/types/reduxTypes/signInTypes";
 
 
 export type AuthState = {
@@ -32,17 +32,21 @@ export const authReducer = (state = initialState, action: AuthActions) => {
                 error: action.payload,
             };
 
-        case SIGNUP_SUCCESS || REGISTER_SUCCESS:
+        case SIGNUP_SUCCESS:
             return {
-                ...state,
-                // pending: false,
                 user: action.payload,
                 error: null,
             };
 
-        default:
+        case REGISTER_SUCCESS:
             return {
-                ...state,
+                user: action.payload,
+                error: {},
             };
+
+            default:
+                return {
+                    ...state,
+                };
     }
 };

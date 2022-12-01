@@ -1,4 +1,4 @@
-import {ActionPostType, postsStateType} from "../../types/reduxTypes/blogTypes"
+import {ActionPostType, postsStateType} from "../../others/types/reduxTypes/blogTypes"
 import {ACTION_POST_TYPES} from "./action";
 
 const initialPostState:postsStateType  = {

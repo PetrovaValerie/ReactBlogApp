@@ -1,4 +1,4 @@
-import {ACTION_POST_TYPES} from "../../../redux/blog/action";
+import {ACTION_POST_TYPES} from "../../../../redux/blog/action";
 
 export type PostTypes = {
     id: number,

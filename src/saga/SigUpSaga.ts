@@ -1,6 +1,6 @@
 import { put, call, takeEvery } from 'redux-saga/effects'
 import { PayloadAction } from '@reduxjs/toolkit'
-import {SIGNUP_REQUEST, SignUpPayload, SignUpSuccessPayload} from "../types/reduxTypes/signUpTypes";
+import {SIGNUP_REQUEST, SignUpPayload, SignUpSuccessPayload} from "../others/types/reduxTypes/signUpTypes";
 import {signUpFailure, signUpRequest, signUpSuccess} from "../redux/store/authReducer/action";
 
 

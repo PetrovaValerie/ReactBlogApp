@@ -17,11 +17,12 @@ export const BackBtn = styled(NavLink)`
       padding: 0.4%;
       text-decoration: none;
       outline: none;
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      line-height: 24px;
-      font-weight: 400;
-      color: ${COLORS.secondary};
+          p { font-family: 'Inter', sans-serif;
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 400;
+          color: ${COLORS.secondary};
+          }
           :hover {
             text-decoration: underline;
           }

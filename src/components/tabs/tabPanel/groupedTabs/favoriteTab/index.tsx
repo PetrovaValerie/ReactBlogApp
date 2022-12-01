@@ -1,6 +1,6 @@
 import React from "react";
 import {GroupedCards, GroupedWrap, GroupedImg, GroupedText, GroupedTitle} from "../style";
-import {useAppSelector} from "../../../../../others/redux/store/rootReducer";
+import {useAppSelector} from "../../../../../redux/store/rootReducer";
 import {Link} from "react-router-dom";
 import {CardIconsRow} from "../../../../cards/otherElems/iconsRow";
 

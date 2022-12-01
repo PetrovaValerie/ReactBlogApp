@@ -21,14 +21,14 @@ export const Switcher = () => {
                     onClick={() => {
                         setState(true)
                         !state && selectLightTheme()}}
-                    stroke={!state}><LightIcon/>
+                    strokes={!state}><LightIcon/>
                 </IconWrap>
 
                 <IconWrap
                     onClick={() => {
                         setState(false)
                         state && selectDarkTheme()}}
-                    stroke={state}><DarkIcon/>
+                    strokes={state}><DarkIcon/>
                 </IconWrap>
             </CheckBoxWrapper>
     )}

@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {BasicCardWrapper, BasicCardImg, BasicCardText} from "../style";
-import {useAppSelector} from "../../../../../others/redux/store/rootReducer";
+import {useAppSelector} from "../../../../../redux/store/rootReducer";
 import {CardIconsRow} from "../../../otherElems/iconsRow";
 
 export const BasicCard = () => {
