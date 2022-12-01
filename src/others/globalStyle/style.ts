@@ -55,6 +55,7 @@ export const MainStyle = createGlobalStyle<{ props: StateType }>`
       main p,
       //main h3,
       div:nth-child(n),
+      button > span,
       a:visited {
         color: ${({props}) => props.color};
       }

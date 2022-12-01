@@ -4,7 +4,7 @@ import {HeaderMenu} from "../../components/navMenu";
 import {Footer} from "../../components/footer";
 import {LayoutProps} from "../../others/types/layoutTypes";
 import {MainStyle} from "../../others/globalStyle/style"
-import {useThemeSelector} from "../../others/redux/store/rootReducer";
+import {useThemeSelector} from "../../redux/store/rootReducer";
 
 export const Layout = ({children}: LayoutProps) => {
 

@@ -5,10 +5,9 @@ import {SignInBtn} from "./signInInput/style";
 import {InputLine} from "./signInInput/input";
 import {SignInFormProps} from "../../../others/types/formsTypes";
 import {useDispatch} from "react-redux";
-import {signInRequest} from "../../../others/redux/store/authReducer/action";
+import {signInRequest} from "../../../redux/store/authReducer/action";
 
 export const SignInForm = () => {
-
 
     const [value, setValue] = useState<SignInFormProps>({
         email: '',
@@ -17,7 +16,7 @@ export const SignInForm = () => {
 
 
     const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>): void => {
-        event.preventDefault();
+        // event.preventDefault();
         setValue((prevState: SignInFormProps) => {
             return (
                 {
@@ -35,12 +34,15 @@ export const SignInForm = () => {
             dispatch(signInRequest(value))
         }
     }
+    const handleClick = () => {
+        dispatch(signInRequest({email: 'zyt14@mail.ru', password: 'qwerty7654321' }))
+    };
 
     return (
         <>
             <TopWrap>
                 <BackBtn to="/">
-                    Back to home
+                    <p>Back to home</p>
                 </BackBtn>
                 <WebTitle>
                     Sign In
@@ -69,12 +71,12 @@ export const SignInForm = () => {
                         autoComplete={"current-password"}
                     />
                     <ForgotPassOption>Forgot password?</ForgotPassOption>
-                    {/*<SignInBtn onClick={handleSubmit}>*/}
                     <SignInBtn onClick={DataForm} >
                         Sign in
                     </SignInBtn>
                     <Text>Don't have an account? <a>Sign Up</a></Text>
                 </Form>
+                <button onClick={() => dispatch(signInRequest({email: "zyt14@mail.ru", password: "qwerty7654321"}))}>Click me</button>
             </Container>
         </>
     )};

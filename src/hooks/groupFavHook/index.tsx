@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {useAppSelector} from "../../others/redux/store/rootReducer";
+import {useAppSelector} from "../../redux/store/rootReducer";
 import {useDispatch} from "react-redux";
-import {toggleFavorite} from "../../others/redux/blog/action";
+import {toggleFavorite} from "../../redux/blog/action";
 
 export const switchToFavouriteHook = (id: number) => {
 

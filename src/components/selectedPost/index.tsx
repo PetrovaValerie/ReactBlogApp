@@ -1,10 +1,11 @@
 import React from "react";
 import {useParams} from "react-router-dom";
-import {useAppSelector} from "../../others/redux/store/rootReducer";
+import {useAppSelector} from "../../redux/store/rootReducer";
 import {AiOutlineDislike, AiOutlineLike} from "react-icons/ai";
-import {SelectedPostWrap, SelectedNav, HomeBtn, SelectedTitle, SelectedImg, SelectedDesc} from "./style";
+import {SelectedPostWrap, SelectedNav, SelectedTitle, SelectedImg, SelectedDesc} from "./style";
 import {SelectedIcons, SelectedLikes, SelectedBookmark} from "./style";
 import {BookMarkSvg} from "../cards/otherElems/iconsRow/bookmark/bookMarkSvg";
+import {BackBtn} from "../tabs/style";
 
 export const SelectedPost = () => {
 
@@ -16,10 +17,12 @@ export const SelectedPost = () => {
                            .map((e) => (
                                 <SelectedPostWrap key = {e.id}>
                                     <SelectedNav>
-                                        <HomeBtn to="/">
-                                            <p>Home</p>
-                                        </HomeBtn>
-                                        <span>| Post by: {e.author}</span>
+                                        <BackBtn to = "/">
+                                            <p>Back to home</p>
+                                        </BackBtn>
+                                        <BackBtn to = {`/post/${e.title}`}>
+                                            <p>| Post by: {e.author}</p>
+                                        </BackBtn>
                                     </SelectedNav>
                                     <SelectedTitle>
                                         {e.title}

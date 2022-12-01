@@ -11,7 +11,8 @@ export const SelectedPostWrap = styled.div`
  `
 
 export const SelectedNav = styled.div`
-     width: 280px;
+     //width: 280px;
+     min-width: 320px;
      position: absolute;
      left:20%;
      top: 2%;
@@ -29,16 +30,6 @@ export const SelectedNav = styled.div`
         font-size: 14px;
         line-height: 18px;
        }
- `
-
-export const HomeBtn = styled(NavLink)`
-    text-decoration: none;
-    p {
-     color: ${COLORS.secondary};
-       :hover {
-        text-decoration: underline;
-       }
-    }
  `
 
 export const SelectedTitle = styled.h2`

@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {MinCardWrapper, MinCardContent, MinCardImg, MinCardText} from "../style";
-import {useAppSelector} from "../../../../../others/redux/store/rootReducer";
+import {useAppSelector} from "../../../../../redux/store/rootReducer";
 import {CardIconsRow} from "../../../otherElems/iconsRow";
 import {IconsRow, LikeCount} from "../../../otherElems/iconsRow/style";
 import {AiOutlineDislike, AiOutlineLike} from "react-icons/ai";

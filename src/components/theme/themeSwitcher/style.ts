@@ -9,7 +9,7 @@ export const CheckBoxWrapper = styled.div`
   margin-left: 1%;
 `
 
-export const IconWrap = styled.div<{stroke?: boolean}>`
+export const IconWrap = styled.div<{strokes?: boolean}>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@ export const IconWrap = styled.div<{stroke?: boolean}>`
   color: black;
   
   & svg:nth-child(n) {
-    stroke: ${props => props.stroke ? `${COLORS.whiteContext}` : `black`};
+    stroke: ${props => props.strokes ? `${COLORS.whiteContext}` : `black`};
   } 
 
   &:first-of-type {

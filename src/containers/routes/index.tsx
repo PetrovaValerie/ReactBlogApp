@@ -7,8 +7,10 @@ import {SignUpForm} from "../forms/signUpForm";
 import {SignInForm} from "../forms/signInForm";
 import {RegConfirm} from "../forms/authorization/RegConfirm";
 import {SelectedPost} from "../../components/selectedPost";
-import {ActivationRoute} from "../forms/authorization/route";
+import {ActivationRoute} from "../forms/route";
 import {PopularTab} from "../../components/tabs/tabPanel/groupedTabs/popularTab";
+import {PageListing} from "../../components/pagination";
+import {AddNewPost} from "../../components/newPost";
 
 export const MainRoute = () => {
 
@@ -22,8 +24,12 @@ export const MainRoute = () => {
                 <Route path='/signUp' element = {<SignUpForm />} />
                 <Route path='/signIn' element = {<SignInForm />} />
                 <Route path='/success' element = {<RegConfirm />} />
+
+                <Route path='/addPost' element = {<AddNewPost />} />
                 <Route path="/post/:title" element={<SelectedPost />} />
+
                 <Route path="/activate/:uid/:token" element={<ActivationRoute />} />
+                <Route path="/pagination" element={<PageListing />} />
             </Routes>
     )}
 

@@ -1,6 +1,6 @@
 import {useDispatch} from "react-redux";
 import {useEffect, useState} from "react";
-import {addPosts} from "../others/redux/blog/action";
+import {addPosts} from "../redux/blog/action";
 
 export const fetchPosts = () => {
     const dispatch = useDispatch();

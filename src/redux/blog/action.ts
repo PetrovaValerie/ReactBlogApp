@@ -1,4 +1,4 @@
-import {PostTypes} from "../../types/reduxTypes/blogTypes";
+import {PostTypes} from "../../others/types/reduxTypes/blogTypes";
 
 export enum ACTION_POST_TYPES {
     ADD_POSTS = "ADD_POSTS",

@@ -4,10 +4,10 @@ import {TopWrap, BackBtn, WebTitle} from "../../../components/tabs/style";
 import {SignUpBtn} from "../signInForm/signInInput/style";
 import {InputLine} from "../signInForm/signInInput/input";
 import {useDispatch} from "react-redux";
-import {signUpRequest} from "../../../others/redux/store/authReducer/action";
+import {signUpRequest} from "../../../redux/store/authReducer/action";
 import {SignUpError} from "./style";
 import {SignUpFormProps} from "../../../others/types/formsTypes";
-import {useAuthSelector} from "../../../others/redux/store/rootReducer";
+// import {useAuthSelector} from "../../../others/redux/store/rootReducer";
 
 export const SignUpForm = () => {
 
@@ -49,72 +49,78 @@ export const SignUpForm = () => {
         <>
             <TopWrap>
                 <BackBtn to="/">
-                    Back to home
+                    <p>Back to home</p>
                 </BackBtn>
                 <WebTitle>Sign Up</WebTitle>
             </TopWrap>
             <Container>
-                <Form>
-                    <InputLine
-                        label={'Name'}
-                        name={'username'}
-                        type={'text'}
-                        placeholder={'Your name'}
-                        value={value.username}
-                        error
-                        // error={'username' in error}
-                        autoComplete={"current-password"}
-                        onChange={handleChange}
-                        aria-required="true" />
-                    <InputLine
-                        label={'Email'}
-                        name={'email'}
-                        type={'email'}
-                        placeholder={'Your email'}
-                        value={value.email}
-                        error
-                        // error={'email' in error}
-                        autoComplete={"current-password"}
-                        onChange={handleChange}
-                        aria-required="true" />
-                    <InputLine
-                        label={'Password'}
-                        name={'password'}
-                        type={'password'}
-                        placeholder={'Your password'}
-                        value={value.password}
-                        error
-                        // error={'password' in error}
-                        autoComplete={"current-password"}
-                        onChange={handleChange}
-                        aria-required="true" />
-                    <InputLine
-                        label={'Confirm password'}
-                        name={'confirmPassword'}
-                        type={'password'}
-                        placeholder={'Confirm password'}
-                        value={value.confirmPassword}
-                        error
-                        // error={'confirmPassword' in error}
-                        autoComplete={"current-password"}
-                        onChange={handleChange}
-                        aria-required={true} />
+                {/*<Form>*/}
+                {/*    <InputLine*/}
+                {/*        label={'Name'}*/}
+                {/*        name={'username'}*/}
+                {/*        type={'text'}*/}
+                {/*        placeholder={'Your name'}*/}
+                {/*        value={value.username}*/}
+                {/*        error*/}
+                {/*        // error={'username' in error}*/}
+                {/*        autoComplete={"current-password"}*/}
+                {/*        onChange={handleChange}*/}
+                {/*        aria-required="true" />*/}
+                {/*    <InputLine*/}
+                {/*        label={'Email'}*/}
+                {/*        name={'email'}*/}
+                {/*        type={'email'}*/}
+                {/*        placeholder={'Your email'}*/}
+                {/*        value={value.email}*/}
+                {/*        error*/}
+                {/*        // error={'email' in error}*/}
+                {/*        autoComplete={"current-password"}*/}
+                {/*        onChange={handleChange}*/}
+                {/*        aria-required="true" />*/}
+                {/*    <InputLine*/}
+                {/*        label={'Password'}*/}
+                {/*        name={'password'}*/}
+                {/*        type={'password'}*/}
+                {/*        placeholder={'Your password'}*/}
+                {/*        value={value.password}*/}
+                {/*        error*/}
+                {/*        // error={'password' in error}*/}
+                {/*        autoComplete={"current-password"}*/}
+                {/*        onChange={handleChange}*/}
+                {/*        aria-required="true" />*/}
+                {/*    <InputLine*/}
+                {/*        label={'Confirm password'}*/}
+                {/*        name={'confirmPassword'}*/}
+                {/*        type={'password'}*/}
+                {/*        placeholder={'Confirm password'}*/}
+                {/*        value={value.confirmPassword}*/}
+                {/*        error*/}
+                {/*        // error={'confirmPassword' in error}*/}
+                {/*        autoComplete={"current-password"}*/}
+                {/*        onChange={handleChange}*/}
+                {/*        aria-required={true} />*/}
+
+
+
                     {/*// aria-invalid={passMatch ? true : false} */}
                     {/*// className={`form-control {passMatch ? "" : "input-error-border"}}*/}
 
-                    <SignUpError>
-                        {value.password !== value.confirmPassword ? "" : ""}
-                    </SignUpError>
-                    <SignUpError className="input-error">
-                        {passMatch ? "" : "Error: Passwords do not match"}
-                    </SignUpError>
 
-                    <SignUpBtn onClick={dataForm}>
-                        Sign Up
-                    </SignUpBtn>
-                    <Text>Don't have an account? <a>Sign Up</a></Text>
-                    <BackBtn to="/success">Success reg</BackBtn>
-                </Form>
+
+
+                {/*    <SignUpError>*/}
+                {/*        {value.password !== value.confirmPassword ? "" : ""}*/}
+                {/*    </SignUpError>*/}
+                {/*    <SignUpError className="input-error">*/}
+                {/*        {passMatch ? "" : "Error: Passwords do not match"}*/}
+                {/*    </SignUpError>*/}
+
+                {/*    <SignUpBtn onClick={dataForm}>*/}
+                {/*        Sign Up*/}
+                {/*    </SignUpBtn>*/}
+                {/*    <Text>Don't have an account? <a>Sign Up</a></Text>*/}
+                {/*    <BackBtn to="/success">Success reg</BackBtn>*/}
+                {/*</Form>*/}
             </Container>
         </>
     )};
